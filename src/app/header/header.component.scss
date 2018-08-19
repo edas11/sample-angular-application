@@ -7,9 +7,12 @@ nav{
 
 .logo{
     display: inline-block;
-    width: $logo-width;
     height: $logo-height;
-    background-color: black;
+    vertical-align: bottom;
+}
+.popup{
+    color: $light-gray;
+    font-size: 15px;
 }
 
 .main-nav{
@@ -18,23 +21,25 @@ nav{
     right: 0;
 }
 .main-nav-links{
-    padding: 0 0 10px 30px;
+    padding: 0 0 10px 80px;
 }
 a.app-link{
+    position: relative;
     text-decoration: none;
     padding: 5px 20px;
 
     i{
+        position: relative;
+        bottom: 3px;
         color: $light-gray;
-        font-size: $font-size - 3px;
-        padding: 5px;
+        font-size: $font-size - 10px;
+        padding: 0 10px;
     }
 
     span{
         font-size: $font-size;
         color: $link-color;
         font-style: italic;
-        vertical-align: bottom;
     }
 }
 .bottom-border{
