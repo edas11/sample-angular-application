@@ -2,7 +2,7 @@
 
 nav{
     position: relative;
-    padding: 10px;
+    margin: 10px 20px;
 }
 
 .logo{
@@ -19,6 +19,18 @@ nav{
     position: absolute;
     bottom: 0;
     right: 0;
+}
+.main-nav-mobile{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    i{
+        font-size: 20px;
+        color: $dark-gray;
+    }
 }
 .main-nav-links{
     padding: 0 0 10px 80px;
@@ -47,4 +59,52 @@ a.app-link{
     border-radius: 20px;
     height: 3px;
     border: 2px solid $main-color;
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-nav-links{
+        padding: 0 0 10px 10px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .logo{
+        height: $logo-height - 10px;
+    }
+
+    a.app-link{
+    
+        i{
+            font-size: $font-size - 20px;
+        }
+    
+        span{
+            font-size: $font-size - 10px;
+        }
+    }
+
+    .bottom-border{
+        border-width: 1px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    a.app-link{
+        padding: 5px 10px;
+    
+        i{
+            padding: 0 5px;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .main-nav{
+        display: none;
+    }
+    .main-nav-mobile{
+        display: block;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .logo{
+        height: $logo-height - 20px;
+    }
 }
