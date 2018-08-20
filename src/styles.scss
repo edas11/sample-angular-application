@@ -1,5 +1,13 @@
+@import 'variables';
+
+html{
+    height: 100%;
+}
 body{
     min-width: 300px;
+    min-height: 100%;
+    margin: 0;
+    padding-bottom: $footer-height;
 }
 
 .ui-overlaypanel{
