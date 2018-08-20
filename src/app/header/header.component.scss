@@ -1,18 +1,16 @@
-@import '../../variables';
+@import 'variables';
 
 nav{
     position: relative;
     margin: 10px 20px;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .logo{
     display: inline-block;
     height: $logo-height;
     vertical-align: bottom;
-}
-.popup{
-    color: $light-gray;
-    font-size: 15px;
 }
 
 .main-nav{
