@@ -1,0 +1,12 @@
+@import 'variables';
+
+.main-nav-mobile{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+
+    i{
+        font-size: 20px;
+        color: $dark-gray;
+    }
+}

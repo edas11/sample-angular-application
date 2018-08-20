@@ -18,17 +18,11 @@ nav{
     bottom: 0;
     right: 0;
 }
-.main-nav-mobile{
+app-w-mobile-nav{
     display: none;
-    padding: 10px;
     position: absolute;
     top: 0;
     right: 0;
-
-    i{
-        font-size: 20px;
-        color: $dark-gray;
-    }
 }
 .main-nav-links{
     padding: 0 0 10px 80px;
@@ -51,6 +45,14 @@ a.app-link{
         color: $link-color;
         font-style: italic;
     }
+}
+.app-link-container{
+    padding: 10px 0;
+}
+.app-links-label{
+    font-size: $font-size;
+    padding: 10px 0;
+    color: $main-color;
 }
 .bottom-border{
     background-color: $main-color;
@@ -97,7 +99,7 @@ a.app-link{
     .main-nav{
         display: none;
     }
-    .main-nav-mobile{
+    app-w-mobile-nav{
         display: block;
     }
 }

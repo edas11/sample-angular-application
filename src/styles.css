@@ -9,3 +9,6 @@ body{
 .ui-overlaypanel-close{
     background-color: #3da7eb !important;
 }
+.ui-sidebar{
+    height: auto;
+}
