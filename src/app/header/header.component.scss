@@ -2,27 +2,26 @@
 
 nav{
     position: relative;
-    margin: 10px 20px;
-    max-width: 1300px;
+    max-width: 1450px;
     margin: auto;
+    padding: $header-padding-top-bottom $header-padding-left-right;
 }
 
 .logo{
     display: inline-block;
-    height: $logo-height;
     vertical-align: bottom;
 }
 
 .main-nav{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: $header-padding-top-bottom;
+    right: $header-padding-left-right;
 }
 app-w-mobile-nav{
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: $header-padding-top-bottom;
+    right: $header-padding-left-right;
 }
 .main-nav-links{
     padding: 0 0 10px 80px;
@@ -67,9 +66,6 @@ a.app-link{
     }
 }
 @media only screen and (max-width: 800px) {
-    .logo{
-        height: $logo-height - 10px;
-    }
 
     a.app-link{
     
@@ -104,7 +100,4 @@ a.app-link{
     }
 }
 @media only screen and (max-width: 350px) {
-    .logo{
-        height: $logo-height - 20px;
-    }
 }
