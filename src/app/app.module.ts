@@ -6,6 +6,8 @@ import { WidgetsModule } from './widgets/widgets.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRuotingModule } from './app-ruoting.module';
+import { CityListModule } from './city-list/city-list.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     WidgetsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CityListModule,
+    AppRuotingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
