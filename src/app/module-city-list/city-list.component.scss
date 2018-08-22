@@ -1,0 +1,78 @@
+@import 'variables';
+
+$max-picture-width: 540px;
+$grid-item-padding: 30px;
+main{
+    max-width: 2*$max-picture-width + 4*$grid-item-padding;
+    margin: auto;
+}
+header{
+    margin-bottom: 20px;
+    h1{
+        margin: 0;
+        color: $main-color;
+        font-weight: bold;
+    }
+    p{
+        margin: 0;
+        margin-top: 5px;
+    }
+}
+section{
+
+    .city-name{
+        padding-right: 10px;
+        font-style: italic;
+        color: $link-color;
+        font-size: $font-size-big;;
+    }
+    .city-meta{
+        color: $main-color;
+    }
+
+    .city{
+        padding: 0;
+        cursor: pointer;
+        padding-bottom: 2*$grid-item-padding;
+    }
+    a:nth-child(odd) .city{
+        padding-right: $grid-item-padding;
+    }
+    a:nth-child(even) .city{
+        padding-left: $grid-item-padding;
+    }
+
+    .city-image{
+        width: 100%;
+    }
+}
+
+.city-seperator{
+    border-width: 3px;
+    margin: 2px 0 10px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    main{
+        max-width: 2*$max-picture-width + 2*$grid-item-padding;
+    
+        .city{
+            padding-bottom: $grid-item-padding;
+        }
+        a:nth-child(odd) .city{
+            padding-right: $grid-item-padding/2;
+        }
+        a:nth-child(even) .city{
+            padding-left: $grid-item-padding/2;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    main{
+        max-width: $max-picture-width;
+        .city{
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+}

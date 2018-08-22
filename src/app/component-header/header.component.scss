@@ -2,9 +2,9 @@
 
 nav{
     position: relative;
-    max-width: 1450px;
+    max-width: $max-content-width;
     margin: auto;
-    padding: $header-padding-top-bottom $header-padding-left-right;
+    padding: $header-padding-top-bottom $content-padding-left-right;
 }
 
 .logo{
@@ -21,13 +21,13 @@ app-w-info-popup{
 .main-nav{
     position: absolute;
     bottom: $header-padding-top-bottom;
-    right: $header-padding-left-right;
+    right: $content-padding-left-right;
 }
 app-w-mobile-nav{
     display: none;
     position: absolute;
     top: $header-padding-top-bottom;
-    right: $header-padding-left-right;
+    right: $content-padding-left-right;
 }
 .main-nav-links{
     padding: 0 0 10px 80px;
@@ -35,7 +35,7 @@ app-w-mobile-nav{
 a.app-link{
     position: relative;
     text-decoration: none;
-    padding: 5px 20px;
+    padding: 5px 15px;
 
     i{
         position: relative;
@@ -59,11 +59,8 @@ a.app-link{
     padding: 10px 0;
     color: $main-color;
 }
-.bottom-border{
-    background-color: $main-color;
-    border-radius: 20px;
-    height: 1px;
-    border: 4px solid $main-color;
+.nav-underline{
+    border-width: 3px;
 }
 
 @media only screen and (max-width: 800px) {

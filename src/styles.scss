@@ -1,16 +1,30 @@
 @import 'variables';
 
+/* Document styles */
 html{
     height: 100%;
+    font-size: 16px;
+    min-width: $min-page-width;
     font-family: 'Raleway', sans-serif;
+    color: $dark-gray;
 }
 body{
-    min-width: 300px;
+    position: relative;
     min-height: 100%;
     margin: 0;
     padding-bottom: $footer-height;
 }
 
+/* Custom classes styles */
+.bottom-border{
+    background-color: $main-color;
+    border-radius: 20px;
+    height: 1px;
+    border-style: solid;
+    border-color: $main-color;
+}
+
+/* PrimeNG styles */
 .ui-overlaypanel{
     width: 20%;
     min-width: 200px;
@@ -20,4 +34,14 @@ body{
 }
 .ui-sidebar{
     height: auto;
+}
+
+/* Primeng gird modifications*/
+.myui-g-6{
+    width: 50%;
+}
+@media only screen and (max-width: 800px) {
+    .myui-sm-12{
+        width: 100%;
+    }
 }
