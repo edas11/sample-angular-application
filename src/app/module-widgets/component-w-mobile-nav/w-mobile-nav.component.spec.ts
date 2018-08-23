@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { WMobileNavComponent } from './w-mobile-nav.component';
 
 describe('WMobileNavComponent', () => {
@@ -8,7 +8,8 @@ describe('WMobileNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WMobileNavComponent ]
+      declarations: [ WMobileNavComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

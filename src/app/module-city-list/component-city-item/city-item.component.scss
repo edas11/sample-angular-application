@@ -1,0 +1,22 @@
+@import 'variables';
+
+.city{
+    max-width: $max-city-picture-width;
+}
+.city-name{
+    padding-right: 10px;
+    font-style: italic;
+    color: $link-color;
+    font-size: $font-size-big;;
+}
+.city-meta{
+    color: $main-color;
+}
+.city-image{
+    width: 100%;
+}
+.city-seperator{
+    border-width: 3px;
+    margin: 2px 0 10px 0;
+    width: 90%;
+}
