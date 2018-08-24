@@ -5,9 +5,10 @@
   </header>
 
   <section class='ui-g'>
-    <a *ngFor="let city of cities" class='myui-g-6 myui-sm-12'>
-      <app-city-item [city]=city></app-city-item>
-    </a>
-
+    <ng-container *ngFor="let city of cities">
+      <a [routerLink]="['/hotels', city.cityName]" class='myui-g-6 myui-sm-12'>
+        <app-city-item [city]=city></app-city-item>
+      </a>
+    </ng-container>
   </section>
 </main>

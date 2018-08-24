@@ -8,6 +8,7 @@ import { HeaderComponent } from './component-header/header.component';
 import { FooterComponent } from './component-footer/footer.component';
 import { AppRuotingModule } from './app-ruoting.module';
 import { CityListModule } from './module-city-list/city-list.module';
+import { HotelListModule } from './module-hotel-list/hotel-list.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CityListModule } from './module-city-list/city-list.module';
     WidgetsModule,
     BrowserAnimationsModule,
     CityListModule,
+    HotelListModule,
     AppRuotingModule
   ],
   providers: [],
