@@ -4,6 +4,7 @@ $grid-item-padding: 30px;
 main{
     max-width: 2*$max-city-picture-width + 2*$grid-item-padding;
     margin: auto;
+	display: block;
 }
 header{
     margin-bottom: 20px;
