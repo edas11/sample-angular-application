@@ -1,0 +1,9 @@
+@import 'variables';
+
+:host ::ng-deep .ui-rating-icon{
+    color: $main-color;
+}
+:host ::ng-deep .ui-state-disabled{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}

@@ -1,0 +1,138 @@
+@import 'variables';
+$hotel-picture-width: 200px;
+$hotel-info-width: 200px;
+
+main{
+    width: 90%;
+    margin: auto;
+}
+header{
+    margin-bottom: 20px;
+    h1{
+        margin: 0;
+        color: $main-color;
+        font-weight: bold;
+    }
+    p{
+        margin: 0;
+        margin-top: 5px;
+    }
+}
+.hotel-header{
+    width: 100%;
+    display: none;
+    padding-bottom: 10px;
+}
+.hotel-img{
+    width: 200px;
+    cursor: pointer;
+    img{
+        width: 100%;
+    }
+}
+.hotel-content{
+    width: calc(100% - #{$hotel-picture-width});
+    .hotel-description{
+        width: calc(100% - #{$hotel-info-width});
+        padding: 0 50px 0 40px;
+    }
+    .hotel-description-text{
+        font-size: $font-size-small;
+    }
+    .hotel-additional{
+        width: $hotel-info-width;
+        padding-left: 20px;
+    }
+    .info{
+        margin-top: 40px;
+    
+        b{
+            color: $main-color;
+        }
+    }
+}
+
+.hotel-link{
+    cursor: pointer;
+    display: inline-block;
+    i{
+        font-size: $font-size - 4;
+        color: $light-gray;
+    }
+    span{
+        font-size: $font-size;
+        color: $link-color;
+        font-style: italic;
+        padding-left: 5px;
+    }
+}
+.hotel-underline{
+    width: 100%;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 1150px) {
+    main{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 900px) and (min-width: 600px){
+    .hotel-content {
+
+        .hotel-description{
+            width: 100%;
+        }
+
+        .hotel-additional{
+            width: 100%;
+            padding-left: 40px; //refactor
+            margin-top: 10px;
+
+            .reviews{
+                width: 50%;
+            }
+            .info{
+                margin-top: 0; 
+                width: 50%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hotel-description .hotel-link{
+        display: none;
+    }
+    .hotel-header{
+        display: block;
+    }
+}
+@media only screen and (max-width: 600px) {
+    main{
+        max-width: 500px;
+    }
+    .hotel-description{
+        display: none;
+    }
+    .hotel-img{
+        width: 45%;
+        max-width: 200px;
+    }
+    .hotel-content{
+        font-size: $font-size - 5px;
+        width: 55%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .hotel-header span{
+        font-size: $font-size - 2px;
+    }
+    .hotel-content{
+        width: 55%;
+        font-size: $font-size-very-small;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .g-header span{
+        font-size: $font-size-small;
+    }
+}
