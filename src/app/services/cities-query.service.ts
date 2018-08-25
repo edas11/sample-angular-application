@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { City } from './module-city-list/city';
+import { City } from '../module-city-list/city';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CitiesDataSourceService {
+export class CitiesQueryService {
 
   cities: City[];
 

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CitiesDataSourceService } from './cities-data-source.service';
+import { CitiesQueryService } from './cities-query.service';
 
 describe('CitiesDataSourceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CitiesDataSourceService]
+      providers: [CitiesQueryService]
     });
   });
 
-  it('should be created', inject([CitiesDataSourceService], (service: CitiesDataSourceService) => {
+  it('should be created', inject([CitiesQueryService], (service: CitiesQueryService) => {
     expect(service).toBeTruthy();
   }));
 });

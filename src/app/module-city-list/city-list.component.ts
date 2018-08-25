@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CitiesDataSourceService } from '../cities-data-source.service';
+import { CitiesQueryService } from '../services/cities-query.service';
 import { City } from './city';
 
 @Component({
@@ -11,7 +11,7 @@ export class CityListComponent implements OnInit {
 
   cities: City[];
 
-  constructor(private citiesDataSource: CitiesDataSourceService) { }
+  constructor(private citiesDataSource: CitiesQueryService) { }
 
   ngOnInit() {
     this.cities = this.citiesDataSource.getCities();
