@@ -3,18 +3,19 @@ import { CitiesQueryService } from '../services/cities-query.service';
 import { CityListComponent } from './city-list.component';
 import { CityItemComponent } from './component-city-item/city-item.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { City } from './city';
+import { CityQueryResult } from '../city-query-result';
+import { City } from '../city';
 
 describe('CityListComponent', () => {
   let component: CityListComponent;
   let fixture: ComponentFixture<CityListComponent>;
   const citiesDataSpy: jasmine.SpyObj<CitiesQueryService> =
-    jasmine.createSpyObj('CitiesQueryService', ['getCities']);
+    jasmine.createSpyObj('CitiesQueryService', ['queryCities']);
 
   beforeEach(() => {
-    citiesDataSpy.getCities.and.returnValue([
+    citiesDataSpy.queryCities.and.returnValue([
       null, undefined,
-      new City('Berlin', '2 hotels in total', 'assets/flags/de-flag.png', 'assets/cities/Berlin.jpg')
+      new CityQueryResult(new City('Berlin', 'assets/flags/de-flag.png', 'assets/cities/Berlin.jpg'), '2 hotels in total')
     ]);
 
     TestBed.configureTestingModule({
@@ -35,7 +36,7 @@ describe('CityListComponent', () => {
   });
 
   it('should call CitiesDataSourceService to get cities', () => {
-    expect(citiesDataSpy.getCities).toHaveBeenCalled();
+    expect(citiesDataSpy.queryCities).toHaveBeenCalled();
     const items = fixture.nativeElement.querySelectorAll('app-city-item');
     expect(items.length).toEqual(3);
     expect(items[2].querySelector('.city-name').textContent).toEqual('Berlin');

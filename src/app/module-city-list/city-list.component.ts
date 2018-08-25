@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesQueryService } from '../services/cities-query.service';
-import { City } from './city';
+import { CityQueryResult } from '../city-query-result';
 
 @Component({
   selector: 'app-city-list',
@@ -9,12 +9,12 @@ import { City } from './city';
 })
 export class CityListComponent implements OnInit {
 
-  cities: City[];
+  cities: CityQueryResult[];
 
-  constructor(private citiesDataSource: CitiesQueryService) { }
+  constructor(private citiesQueryService: CitiesQueryService) { }
 
   ngOnInit() {
-    this.cities = this.citiesDataSource.getCities();
+    this.cities = this.citiesQueryService.queryCities();
   }
 
 }

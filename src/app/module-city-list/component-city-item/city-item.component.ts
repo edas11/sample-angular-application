@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { City } from '../city';
+import { CityQueryResult } from '../../city-query-result';
 
 @Component({
   selector: 'app-city-item',
@@ -7,7 +7,7 @@ import { City } from '../city';
   styleUrls: ['./city-item.component.scss']
 })
 export class CityItemComponent implements OnInit {
-  @Input() city: City;
+  @Input() city: CityQueryResult;
 
   constructor() { }
 

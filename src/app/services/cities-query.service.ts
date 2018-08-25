@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import { City } from '../module-city-list/city';
+import { CityQueryResult } from '../city-query-result';
+import { CitiesService } from './cities.service';
+import { HotelsQueryService } from './hotels-query.service';
+import { City } from '../city';
+import { Hotel } from '../hotel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitiesQueryService {
 
-  cities: City[];
+  cities: CityQueryResult[];
 
-  constructor() {
-    this.cities = [
-      new City('Vilnius', '2 hotels in total', 'assets/flags/lt-flag.png', 'assets/cities/Vilnius.jpg'),
-      new City('London', '3 hotels in total', 'assets/flags/gb-flag.png', 'assets/cities/London.jpg'),
-      new City('Paris', '3 hotels in total', 'assets/flags/fr-flag.png', 'assets/cities/Paris.jpg'),
-      new City('Berlin', '2 hotels in total', 'assets/flags/de-flag.png', 'assets/cities/Berlin.jpg')
-    ];
-   }
+  constructor(private citiesService: CitiesService, private hotelsQueryService: HotelsQueryService) {
+  }
 
-  public getCities(): City[] {
-    return this.cities;
+  public queryCities(): CityQueryResult[] {
+    const cities: City[] = this.citiesService.getAllCities();
+    return cities.map( (city: City) => {
+      const hotels: Hotel[] = this.hotelsQueryService.getHotelsByCity(city);
+      return new CityQueryResult(city, hotels.length + ' hotels in a city');
+    });
   }
 }
