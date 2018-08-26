@@ -7,7 +7,7 @@ export class HotelStubFactory {
     constructor() {
     }
     static createHotelIn(city: City): Hotel {
-        return new Hotel('', '', city, 0, [0, 0], '', [''], [''], [new Room()]);
+        return new Hotel('', '', city, 0, [0, 0], '', [''], [''], [null]);
     }
 
 }
