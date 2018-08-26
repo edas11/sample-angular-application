@@ -4,43 +4,45 @@
     <p>Vilnius, 2 hotels in total</p>
   </header>
   <section>
-    <div class='ui-g'>
+    <ng-container *ngFor="let hotel of hotels$ | async">
+    <div class='ui-g hotel'>
       <div class='hotel-header'>
         <a class='hotel-link'>
           <i class="fas fa-building"></i>
-          <span>Radisson Blu Hotel Lietuva</span>
+          <span>{{hotel.hotelName}}</span>
           <div class='bottom-border hotel-underline'></div>
         </a>
       </div>
       <a class='hotel-img'>
-        <img src='assets/hotels/radisson blu.jpg'/>
+        <img [src]='hotel.imgSrc'/>
       </a>
       <div class='hotel-content ui-g'>
         <div class='hotel-description'>
           <header>
             <a class='hotel-link'>
               <i class="fas fa-building"></i>
-              <span>Radisson Blu Hotel Lietuva</span>
+              <span>{{hotel.hotelName}}</span>
               <div class='bottom-border hotel-underline'></div>
             </a>
           </header>
           <div class='hotel-description-text'>
-              The elegant 4-star Radisson Blu Hotel Lietuva is located on the banks of the River Neris in the centre of Vilnius. It offers on-site parking, spacious rooms with free Wi-Fi, and a fitness centre.
+              {{hotel.description}}
           </div>
         </div>
         <div class='hotel-additional ui-g'>
           <div class='reviews'>
             <div>
-              <app-w-rating [rating]='4'></app-w-rating>
+              <app-w-rating [rating]='hotel.rating'></app-w-rating>
             </div>
-            <div>9.0  in 1436 reviews</div>
+            <div>{{hotel.userReviews[0].toFixed(1)}}  in {{hotel.userReviews[1]}} reviews</div>
           </div>
           <div class='info'>
             <div>From <b>€50</b> to <b>€150</b></div>
-            <div><b>3</b> rooms available</div>
+            <div><b>{{hotel.rooms.length}}</b> rooms available</div>
           </div>
         </div>
       </div>
     </div>
+    </ng-container>
   </section>
 </main>

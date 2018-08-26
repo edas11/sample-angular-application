@@ -18,6 +18,16 @@ header{
         margin-top: 5px;
     }
 }
+
+.hotel.hotel:not(:first-child){
+    padding-top: 40px;
+}
+.hotel.hotel:not(:last-child){
+    padding-bottom: 40px;
+}
+.hotel:not(:last-child){
+    border-bottom: 1px solid #c2def1;
+}
 .hotel-header{
     width: 100%;
     display: none;

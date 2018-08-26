@@ -12,10 +12,11 @@ export class Hotel {
     private _facilities: String[];
     private _activities: String[];
     private _rooms: Room[];
+    private _imgSrc: String;
 
     constructor(hotelName: String, street: String, city: City, rating: Number,
         userReviews: [Number, Number], description: String, facilities: String[],
-        activities: String[], rooms: Room[]) {
+        activities: String[], rooms: Room[], imgSrc: String) {
         this._hotelName = hotelName;
         this._street = street;
         this._city = city;
@@ -25,6 +26,7 @@ export class Hotel {
         this._facilities = facilities;
         this._activities = activities;
         this._rooms = rooms;
+        this._imgSrc = imgSrc;
     }
 
     public get hotelName(): String {
@@ -53,6 +55,9 @@ export class Hotel {
     }
     public get rooms(): Room[] {
         return this._rooms;
+    }
+    public get imgSrc(): String {
+        return this._imgSrc;
     }
 
 }

@@ -24,7 +24,7 @@ describe('HotelsService', () => {
   }));
 
   it('should give null hotel if name not found or null or undefined', inject([HotelsService], (service: HotelsService) => {
-    const nullHotel = new Hotel('', '', null, 0, [0, 0], '', [''], [''], [null]);
+    const nullHotel = new Hotel('', '', null, 0, [0, 0], '', [''], [''], [null], '');
     expect(service.getHotel('abc')).toEqual(nullHotel);
     expect(service.getHotel(null)).toEqual(nullHotel);
     expect(service.getHotel(undefined)).toEqual(nullHotel);
