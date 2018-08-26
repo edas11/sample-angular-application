@@ -7,7 +7,7 @@ import { CityQueryResult } from '../../city-query-result';
   styleUrls: ['./city-item.component.scss']
 })
 export class CityItemComponent implements OnInit {
-  @Input() city: CityQueryResult;
+  @Input() cityResult: CityQueryResult;
 
   constructor() { }
 

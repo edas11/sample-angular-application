@@ -9,12 +9,12 @@ import { CityQueryResult } from '../city-query-result';
 })
 export class CityListComponent implements OnInit {
 
-  cities: CityQueryResult[];
+  citiesResult: CityQueryResult[];
 
   constructor(private citiesQueryService: CitiesQueryService) { }
 
   ngOnInit() {
-    this.cities = this.citiesQueryService.queryCities();
+    this.citiesResult = this.citiesQueryService.queryCities();
   }
 
 }

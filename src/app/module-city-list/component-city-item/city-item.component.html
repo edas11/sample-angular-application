@@ -1,11 +1,11 @@
 <div class='city'>
   <div class='city-details'>
-    <img [src]=city?.flagSrc/>
-    <span class='city-name'>{{city?.cityName}}</span>
-    <span class='city-meta'>{{city?.cityMeta}}</span>
+    <img [src]=cityResult?.city?.flagSrc/>
+    <span class='city-name'>{{cityResult?.city?.cityName}}</span>
+    <span class='city-meta'>{{cityResult?.cityMeta}}</span>
   </div>
   <div class='bottom-border city-seperator'></div>
   <div>
-    <img class='city-image' [src]=city?.imgSrc/>
+    <img class='city-image' [src]=cityResult?.city?.imgSrc/>
   </div>
 </div>
