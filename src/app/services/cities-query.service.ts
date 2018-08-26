@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CityQueryResult } from '../city-query-result';
 import { CitiesService } from './cities.service';
-import { HotelsQueryService } from './hotels-query.service';
+import { HotelsService } from './hotels.service';
 import { City } from '../city';
 import { Hotel } from '../hotel';
 
@@ -12,13 +12,13 @@ export class CitiesQueryService {
 
   cities: CityQueryResult[];
 
-  constructor(private citiesService: CitiesService, private hotelsQueryService: HotelsQueryService) {
+  constructor(private citiesService: CitiesService, private hotelsService: HotelsService) {
   }
 
   public queryCities(): CityQueryResult[] {
     const cities: City[] = this.citiesService.getAllCities();
     return cities.map( (city: City) => {
-      const hotels: Hotel[] = this.hotelsQueryService.getHotelsByCity(city);
+      const hotels: Hotel[] = this.hotelsService.getHotelsByCity(city);
       return new CityQueryResult(city, hotels.length + ' hotels in a city');
     });
   }

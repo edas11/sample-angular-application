@@ -12,4 +12,6 @@ describe('HotelsService', () => {
   it('should be created', inject([HotelsService], (service: HotelsService) => {
     expect(service).toBeTruthy();
   }));
+
+  
 });

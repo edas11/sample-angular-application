@@ -1,13 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { CitiesQueryService } from './cities-query.service';
 import { CitiesService } from './cities.service';
-import { HotelsQueryService } from './hotels-query.service';
+import { HotelsService } from './hotels.service';
 import { City } from '../city';
 import { Hotel } from '../hotel';
-import { HotelStub } from './hotel-stub';
+import { HotelStubFactory } from './hotel-stub-factory';
 import { CityQueryResult } from '../city-query-result';
 
-describe('CitiesDataSourceService', () => {
+describe('CitiesQueryService', () => {
   const cities: City[] = [
     new City('Vilnius', 'assets/flags/lt-flag.png', 'assets/cities/Vilnius.jpg'),
     new City('London', 'assets/flags/gb-flag.png', 'assets/cities/London.jpg'),
@@ -17,13 +17,13 @@ describe('CitiesDataSourceService', () => {
     jasmine.createSpyObj('CitiesService', ['getAllCities']);
   citiesSpy.getAllCities.and.returnValue(cities);
 
-  const hotelsQuerySpy: jasmine.SpyObj<HotelsQueryService> =
-    jasmine.createSpyObj('HotelsQueryService', ['getHotelsByCity']);
-  hotelsQuerySpy.getHotelsByCity.and.returnValues([
-    new HotelStub(cities[0]),
-    new HotelStub(cities[0])
+  const hotelsSpy: jasmine.SpyObj<HotelsService> =
+    jasmine.createSpyObj('HotelsService', ['getHotelsByCity']);
+    hotelsSpy.getHotelsByCity.and.returnValues([
+    HotelStubFactory.createHotelIn(cities[0]),
+    HotelStubFactory.createHotelIn(cities[0])
   ], [
-    new HotelStub(cities[1])
+    HotelStubFactory.createHotelIn(cities[1])
   ]);
 
   beforeEach(() => {
@@ -31,7 +31,7 @@ describe('CitiesDataSourceService', () => {
       providers: [
         CitiesQueryService,
         { provide: CitiesService, useValue: citiesSpy},
-        { provide: HotelsQueryService, useValue: hotelsQuerySpy}
+        { provide: HotelsService, useValue: hotelsSpy}
       ]
     });
   });
