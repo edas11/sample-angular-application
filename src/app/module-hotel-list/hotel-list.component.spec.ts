@@ -39,4 +39,22 @@ describe('HotelListComponent', () => {
       expect(hotels).toEqual(expectedHotels);
     });
   });
+
+  it('should have method that returns lowest room price', () => {
+    const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
+    expect(component.getMinRoomPrice(hotels[0])).toEqual(0);
+  });
+
+  it('should have method that returns highest room price if it isnt min price', () => {
+    const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
+    expect(component.getMaxNotMinRoomPrice(hotels[0])).toEqual(1);
+  });
+
+  it('highest room price returns null if max price equals min price', () => {
+    const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
+    expect(component.getMaxNotMinRoomPrice(hotels[1])).toEqual(null);
+
+    console.log(hotels[1]);
+  });
+
 });

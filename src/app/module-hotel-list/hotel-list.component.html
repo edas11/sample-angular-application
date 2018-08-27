@@ -37,7 +37,12 @@
             <div>{{hotel?.userReviews?.avgRating.toFixed(1)}}  in {{hotel?.userReviews?.reviewsNumber}} reviews</div>
           </div>
           <div class='info'>
-            <div>From <b>€50</b> to <b>€150</b></div>
+            <div>
+              From <b>€{{getMinRoomPrice(hotel)}}</b>
+              <ng-container *ngIf='getMaxNotMinRoomPrice(hotel)'>
+                 to <b>€{{getMaxNotMinRoomPrice(hotel)}}</b>
+              </ng-container>
+            </div>
             <div><b>{{hotel?.rooms?.length}}</b> rooms available</div>
           </div>
         </div>
