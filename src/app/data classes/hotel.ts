@@ -1,32 +1,43 @@
 import { City } from './city';
 import { Room } from './room';
+import { UserReviewsInput } from './user-reviews-input';
+import { UserReviews } from './user-reviews';
+import {validateSync , IsInt, Min, Max} from 'class-validator';
 
 export class Hotel {
 
     private _hotelName: String;
     private _street: String;
     private _city: City;
-    private _rating: Number;
-    private _userReviews: [Number, Number];
+    private _userReviews: UserReviews;
     private _description: String;
     private _facilities: String[];
     private _activities: String[];
     private _rooms: Room[];
     private _imgSrc: String;
 
+    @IsInt()
+    @Min(0)
+    @Max(5)
+    private _rating: Number;
+
     constructor(hotelName: String, street: String, city: City, rating: Number,
-        userReviews: [Number, Number], description: String, facilities: String[],
+        userReviews: UserReviewsInput, description: String, facilities: String[],
         activities: String[], rooms: Room[], imgSrc: String) {
         this._hotelName = hotelName;
         this._street = street;
         this._city = city;
         this._rating = rating;
-        this._userReviews = userReviews;
+        this._userReviews = new UserReviews(userReviews);
         this._description = description;
         this._facilities = facilities;
         this._activities = activities;
         this._rooms = rooms;
         this._imgSrc = imgSrc;
+
+        validateSync(this).forEach( (error) => {
+            this[error.property.toString()] = 0;
+        });
     }
 
     public get hotelName(): String {
@@ -41,7 +52,7 @@ export class Hotel {
     public get rating(): Number {
         return this._rating;
     }
-    public get userReviews(): [Number, Number] {
+    public get userReviews(): UserReviews {
         return this._userReviews;
     }
     public get description(): String {

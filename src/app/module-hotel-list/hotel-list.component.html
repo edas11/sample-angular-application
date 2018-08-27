@@ -9,36 +9,36 @@
       <div class='hotel-header'>
         <a class='hotel-link'>
           <i class="fas fa-building"></i>
-          <span>{{hotel.hotelName}}</span>
+          <span>{{hotel?.hotelName}}</span>
           <div class='bottom-border hotel-underline'></div>
         </a>
       </div>
       <a class='hotel-img'>
-        <img [src]='hotel.imgSrc'/>
+        <img [src]='hotel?.imgSrc'/>
       </a>
       <div class='hotel-content ui-g'>
         <div class='hotel-description'>
           <header>
             <a class='hotel-link'>
               <i class="fas fa-building"></i>
-              <span>{{hotel.hotelName}}</span>
+              <span>{{hotel?.hotelName}}</span>
               <div class='bottom-border hotel-underline'></div>
             </a>
           </header>
           <div class='hotel-description-text'>
-              {{hotel.description}}
+              {{hotel?.description}}
           </div>
         </div>
         <div class='hotel-additional ui-g'>
           <div class='reviews'>
             <div>
-              <app-w-rating [rating]='hotel.rating'></app-w-rating>
+              <app-w-rating [rating]='hotel?.rating'></app-w-rating>
             </div>
-            <div>{{hotel.userReviews[0].toFixed(1)}}  in {{hotel.userReviews[1]}} reviews</div>
+            <div>{{hotel?.userReviews?.avgRating.toFixed(1)}}  in {{hotel?.userReviews?.reviewsNumber}} reviews</div>
           </div>
           <div class='info'>
             <div>From <b>€50</b> to <b>€150</b></div>
-            <div><b>{{hotel.rooms.length}}</b> rooms available</div>
+            <div><b>{{hotel?.rooms?.length}}</b> rooms available</div>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { City } from '../data classes/city';
 import { Hotel } from '../data classes/hotel';
 import { CitiesService } from './cities.service';
-import { Room } from '../data classes/room';
 import { HotelsData } from './hotels-data';
 
 @Injectable({
@@ -21,7 +20,7 @@ export class HotelsService {
     if (hotelResult) {
       return hotelResult;
     } else {
-      return new Hotel('', '', null, 0, [0, 0], '', [''], [''], [null], '');
+      return new Hotel('', '', null, 0, {avgRating: 0, reviewsNumber: 0}, '', [''], [''], [null], '');
     }
   }
   getHotelsByCity(city: City): Hotel[] {
