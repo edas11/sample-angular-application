@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CityQueryResult } from '../../city-query-result';
+import { CityQueryResult } from '../../data classes/city-query-result';
 
 @Component({
   selector: 'app-city-item',

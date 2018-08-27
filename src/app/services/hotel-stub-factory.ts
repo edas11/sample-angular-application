@@ -1,6 +1,6 @@
-import { City } from '../city';
-import { Hotel } from '../hotel';
-import { Room } from '../room';
+import { City } from '../data classes/city';
+import { Hotel } from '../data classes/hotel';
+import { Room } from '../data classes/room';
 
 export class HotelStubFactory {
 

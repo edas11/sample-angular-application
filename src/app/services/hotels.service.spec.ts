@@ -1,9 +1,9 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { Hotel } from '../hotel';
+import { Hotel } from '../data classes/hotel';
 import { HotelsService } from './hotels.service';
 import { CitiesService } from './cities.service';
 import { HotelsData } from './hotels-data';
-import { City } from '../city';
+import { City } from '../data classes/city';
 
 describe('HotelsService', () => {
   let data;

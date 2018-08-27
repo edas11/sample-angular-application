@@ -3,8 +3,8 @@ import { CitiesQueryService } from '../services/cities-query.service';
 import { CityListComponent } from './city-list.component';
 import { CityItemComponent } from './component-city-item/city-item.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { CityQueryResult } from '../city-query-result';
-import { City } from '../city';
+import { CityQueryResult } from '../data classes/city-query-result';
+import { City } from '../data classes/city';
 
 describe('CityListComponent', () => {
   let component: CityListComponent;

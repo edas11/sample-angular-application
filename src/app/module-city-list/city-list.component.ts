@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesQueryService } from '../services/cities-query.service';
-import { CityQueryResult } from '../city-query-result';
+import { CityQueryResult } from '../data classes/city-query-result';
 
 @Component({
   selector: 'app-city-list',

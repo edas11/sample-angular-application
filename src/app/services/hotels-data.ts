@@ -1,5 +1,5 @@
-import { Hotel } from '../hotel';
-import { Room } from '../room';
+import { Hotel } from '../data classes/hotel';
+import { Room } from '../data classes/room';
 import { CitiesService } from './cities.service';
 
 export class HotelsData {

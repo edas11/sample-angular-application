@@ -3,8 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
 import { HotelsService } from '../services/hotels.service';
 import { CitiesService } from '../services/cities.service';
-import { Observable } from '../../../node_modules/rxjs';
-import { Hotel } from '../hotel';
+import { Observable } from 'rxjs';
+import { Hotel } from '../data classes/hotel';
 
 @Component({
   selector: 'app-hotel-list',

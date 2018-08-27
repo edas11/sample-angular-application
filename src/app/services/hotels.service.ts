@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { City } from '../city';
-import { Hotel } from '../hotel';
+import { City } from '../data classes/city';
+import { Hotel } from '../data classes/hotel';
 import { CitiesService } from './cities.service';
-import { Room } from '../room';
+import { Room } from '../data classes/room';
 import { HotelsData } from './hotels-data';
 
 @Injectable({

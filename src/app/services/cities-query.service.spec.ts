@@ -2,10 +2,10 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CitiesQueryService } from './cities-query.service';
 import { CitiesService } from './cities.service';
 import { HotelsService } from './hotels.service';
-import { City } from '../city';
-import { Hotel } from '../hotel';
+import { City } from '../data classes/city';
+import { Hotel } from '../data classes/hotel';
 import { HotelStubFactory } from './hotel-stub-factory';
-import { CityQueryResult } from '../city-query-result';
+import { CityQueryResult } from '../data classes/city-query-result';
 
 describe('CitiesQueryService', () => {
   beforeEach(() => {

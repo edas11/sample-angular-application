@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { City } from '../city';
+import { City } from '../data classes/city';
 import { CitiesService } from './cities.service';
 
 const cities = [

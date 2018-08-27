@@ -5,7 +5,7 @@ import { HotelsService } from '../services/hotels.service';
 import { CitiesService } from '../services/cities.service';
 import { ActivatedRouteStub } from '../activated-route-stub';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Hotel } from '../hotel';
+import { Hotel } from '../data classes/hotel';
 import { HotelsData } from '../services/hotels-data';
 
 describe('HotelListComponent', () => {

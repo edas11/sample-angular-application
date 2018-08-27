@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { CityQueryResult } from '../city-query-result';
+import { CityQueryResult } from '../data classes/city-query-result';
 import { CitiesService } from './cities.service';
 import { HotelsService } from './hotels.service';
-import { City } from '../city';
-import { Hotel } from '../hotel';
+import { City } from '../data classes/city';
+import { Hotel } from '../data classes/hotel';
 
 @Injectable({
   providedIn: 'root'

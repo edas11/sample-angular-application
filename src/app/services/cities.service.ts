@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { City } from '../city';
+import { City } from '../data classes/city';
 
 @Injectable({
   providedIn: 'root'
