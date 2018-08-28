@@ -39,6 +39,7 @@ export class HotelListComponent implements OnInit {
     }
   }
 
+  /*
   getMaxNotMinPriceRoom(hotel: Hotel): Room | null {
     const minPriceRoom: Room | null = this.getMinPriceRoom(hotel);
     if (hotel.rooms.length === 0 && !minPriceRoom) {
@@ -56,5 +57,6 @@ export class HotelListComponent implements OnInit {
       return null;
     }
   }
+  */
 
 }

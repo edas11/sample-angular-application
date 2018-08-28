@@ -38,9 +38,8 @@
           </div>
           <div class='info'>
             <div>
+              <ng-container *ngIf='getMinPriceRoom(hotel)'>
               From <b>€{{getMinPriceRoom(hotel).price}}</b>
-              <ng-container *ngIf='getMaxNotMinPriceRoom(hotel)'>
-                 to <b>€{{getMaxNotMinPriceRoom(hotel).price}}</b>
               </ng-container>
             </div>
             <div><b>{{hotel?.rooms?.length}}</b> rooms available</div>
