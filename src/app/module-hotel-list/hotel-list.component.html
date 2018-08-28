@@ -7,19 +7,19 @@
     <ng-container *ngFor="let hotel of hotels$ | async">
     <div class='ui-g hotel'>
       <div class='hotel-header'>
-        <a class='hotel-link'>
+        <a [routerLink]="['/hotels', hotel.hotelName]" class='hotel-link'>
           <i class="fas fa-building"></i>
           <span>{{hotel?.hotelName}}</span>
           <div class='bottom-border hotel-underline'></div>
         </a>
       </div>
-      <a class='hotel-img'>
+      <a [routerLink]="['/hotels', hotel.hotelName]" class='hotel-img'>
         <img [src]='hotel?.imgSrc'/>
       </a>
       <div class='hotel-content ui-g'>
         <div class='hotel-description'>
           <header>
-            <a class='hotel-link'>
+            <a [routerLink]="['/hotels', hotel.hotelName]" class='hotel-link'>
               <i class="fas fa-building"></i>
               <span>{{hotel?.hotelName}}</span>
               <div class='bottom-border hotel-underline'></div>

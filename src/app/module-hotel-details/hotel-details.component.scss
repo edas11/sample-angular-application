@@ -1,0 +1,223 @@
+@import 'variables';
+
+$hotel-img-width: 500px;
+$room-img-width: 200px;
+main{
+    width: 90%;
+    margin: auto;
+}
+h3{
+    color: $main-color;
+}
+
+header#main{
+    position: relative;
+    margin-bottom: 20px;
+
+    .hotel-header{
+        h1{
+            margin: 0;
+            color: $main-color;
+            font-weight: bold;
+        }
+        span{
+            margin: 0;
+            margin-top: 5px;
+        }
+    }
+
+    .hotel-rating{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.hotel-main-info{
+    .hotel-img-container{
+        img{
+            width: $hotel-img-width;
+        }
+    }
+    .hotel-description{
+        width: calc(100% - #{$hotel-img-width});
+        padding: 0 20px;
+        font-size: $font-size-small;
+        line-height: $font-size;
+    }
+    .hotel-features{
+        width: 50%;
+
+        .hotel-features-list{
+            padding-left: 5px;
+        }
+        .hotel-feature{
+            width: 50%;
+            padding-bottom: 20px;
+
+            i{
+                color: $light-gray;
+            }
+            span{
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.hotel-rooms-list{
+    .room{
+        position: relative;
+        width: 50%;
+
+        img.room-img{
+            width: $room-img-width;
+        }
+        .room-info{
+            width: calc(100% - #{$room-img-width});
+            padding: 0 10px 20px 10px;
+
+            .room-name{
+                color: $main-color;
+                font-weight: bold;
+                padding-bottom: 15px; 
+            }
+            .room-reserve{
+                position: absolute;
+                bottom: 0;
+            }
+
+            .room-sleeps{
+                padding-bottom: 3px;
+            }
+            .room-sleeps-label, .room-price-label{
+                padding-right: 5px;
+            }
+            .room-sleeps i{
+                padding-right: 5px;
+                color: $main-color;
+            }
+            .room-sleeps-number{
+                padding-left: 5px;
+            }
+
+            .room-price b{
+                color: $main-color;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    main{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .hotel-description h3{
+        margin-top: 0;
+    }
+}
+@media only screen and (max-width: 800px) {
+    header#main{
+        margin-bottom: 10px;
+        .hotel-header{
+            width: 100%;
+        }
+    
+        .hotel-rating{
+            position: relative;
+            width: 100%;
+            margin-top: 5px;
+        }
+        .hotel-reviews{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .hotel-main-info{
+        .hotel-img-container{
+            width: 90%;
+            margin: auto;
+            img{
+                width: 100%;
+            }
+        }
+
+        .hotel-description{
+            width: 100% !important;
+            padding: 0;
+            font-size: $font-size-standard-small;
+
+            h3{
+                margin: 1em 0 0.5em 0;
+            }
+            div{
+                padding-left: 5px;
+            }
+        }
+    }
+
+    .hotel-rooms-list .room{
+        width: 100%;
+        margin-bottom: 40px;
+
+        .room-info{
+            padding-right: 0; 
+        }
+        .room-name{
+            font-size: $font-size-small;
+            padding-bottom: 8px !important;
+        }
+        .room-sleeps, .room-price{
+            display: inline-block;
+        }
+        .room-sleeps{
+            width: 60%;
+        }
+    }
+}
+@media only screen and (max-width: 650px) {
+    .hotel-main-info{
+        .hotel-features{
+            width: 100%;
+        }
+        .hotel-img-container{
+            width: 100%;
+        }
+    }
+    .hotel-rooms-list .room .room-price{
+        position: absolute;
+        right: 0;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .hotel-header h1{
+        font-size: 1.5em;
+    }
+    .hotel-rooms-list{
+        width: 90%;
+        margin: auto;
+    }
+    .hotel-rooms-list .room{
+        .room-name{
+            font-size: $font-size-small;
+            padding-bottom: 8px !important;
+        }
+        .room-price{
+            position: relative;
+            display: block;
+        }
+        .room-sleeps{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .hotel-rooms-list{
+        width: 100%;
+    }
+}
