@@ -6,7 +6,8 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "strictNullChecks": true
   },
   "files": [
     "test.ts",

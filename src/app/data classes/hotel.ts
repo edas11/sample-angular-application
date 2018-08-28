@@ -40,6 +40,10 @@ export class Hotel {
         });
     }
 
+    static nullHotel(): Hotel {
+        return new Hotel('', '', City.nullCity(), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '');
+    }
+
     public get hotelName(): String {
         return this._hotelName;
     }
@@ -49,8 +53,8 @@ export class Hotel {
     public get city(): City {
         return this._city;
     }
-    public get rating(): Number {
-        return this._rating;
+    public get rating(): String {
+        return this._rating.toFixed(0);
     }
     public get userReviews(): UserReviews {
         return this._userReviews;

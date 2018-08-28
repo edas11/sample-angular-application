@@ -34,13 +34,13 @@
             <div>
               <app-w-rating [rating]='hotel?.rating'></app-w-rating>
             </div>
-            <div>{{hotel?.userReviews?.avgRating.toFixed(1)}}  in {{hotel?.userReviews?.reviewsNumber}} reviews</div>
+            <div>{{hotel?.userReviews?.avgRating}}  in {{hotel?.userReviews?.reviewsNumber}} reviews</div>
           </div>
           <div class='info'>
             <div>
-              From <b>€{{getMinRoomPrice(hotel)}}</b>
-              <ng-container *ngIf='getMaxNotMinRoomPrice(hotel)'>
-                 to <b>€{{getMaxNotMinRoomPrice(hotel)}}</b>
+              From <b>€{{getMinPriceRoom(hotel).price}}</b>
+              <ng-container *ngIf='getMaxNotMinPriceRoom(hotel)'>
+                 to <b>€{{getMaxNotMinPriceRoom(hotel).price}}</b>
               </ng-container>
             </div>
             <div><b>{{hotel?.rooms?.length}}</b> rooms available</div>

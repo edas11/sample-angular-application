@@ -9,6 +9,9 @@ export class City {
         this._flagSrc = flagSrc;
         this._imgSrc = imgSrc;
     }
+    static nullCity(): City {
+        return new City('', '', '');
+    }
 
     get cityName(): String {
         return this._cityName;

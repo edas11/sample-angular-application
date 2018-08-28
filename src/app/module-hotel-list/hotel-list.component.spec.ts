@@ -7,6 +7,7 @@ import { ActivatedRouteStub } from '../activated-route-stub';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Hotel } from '../data classes/hotel';
 import { HotelsData } from '../services/hotels-data';
+import { Room } from '../data classes/room';
 
 describe('HotelListComponent', () => {
   let component: HotelListComponent;
@@ -42,19 +43,19 @@ describe('HotelListComponent', () => {
 
   it('should have method that returns lowest room price', () => {
     const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
-    expect(component.getMinRoomPrice(hotels[0])).toEqual(0);
+    const testRoom = component.getMinPriceRoom(hotels[0]) as Room;
+    expect(testRoom.price).toEqual('0.00');
   });
 
   it('should have method that returns highest room price if it isnt min price', () => {
     const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
-    expect(component.getMaxNotMinRoomPrice(hotels[0])).toEqual(1);
+    const testRoom = component.getMaxNotMinPriceRoom(hotels[0]) as Room;
+    expect(testRoom.price).toEqual('1.00');
   });
 
   it('highest room price returns null if max price equals min price', () => {
     const hotels: Hotel[] = HotelsData.getHotelsData(TestBed.get(CitiesService));
-    expect(component.getMaxNotMinRoomPrice(hotels[1])).toEqual(null);
-
-    console.log(hotels[1]);
+    expect(component.getMaxNotMinPriceRoom(hotels[1])).toEqual(null);
   });
 
 });

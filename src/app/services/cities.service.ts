@@ -20,12 +20,12 @@ export class CitiesService {
     return this.cities;
   }
 
-  getCity(cityName: String): City {
+  getCity(cityName: String | null): City {
     const cityResultArray: City[] = this.cities.filter( (city: City) => city.cityName === cityName);
     if (cityResultArray[0]) {
       return cityResultArray[0];
     } else {
-      return new City('', '', '');
+      return City.nullCity();
     }
   }
 }

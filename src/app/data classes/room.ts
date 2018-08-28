@@ -19,16 +19,26 @@ export class Room {
         validateSync(this).forEach( (error) => {
             this[error.property.toString()] = 0;
         });
-     }
+    }
+
+    public isCheaperThan(room: Room): boolean {
+        return parseFloat(this._price.toFixed(2)) < parseFloat(room._price.toFixed(2));
+    }
+    public isMoreExpensiveThan(room: Room): boolean {
+        return parseFloat(this._price.toFixed(2)) > parseFloat(room._price.toFixed(2));
+    }
+    public isSamePriceAs(room: Room): boolean {
+        return parseFloat(this._price.toFixed(2)) === parseFloat(room._price.toFixed(2));
+    }
 
     public get roomName(): String {
         return this._roomName;
     }
-    public get sleeps(): Number {
-        return this._sleeps;
+    public get sleeps(): String {
+        return this._sleeps.toFixed(0);
     }
-    public get price(): Number {
-        return this._price;
+    public get price(): String {
+        return this._price.toFixed(2);
     }
 
 }

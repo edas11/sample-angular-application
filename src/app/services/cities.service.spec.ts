@@ -28,19 +28,8 @@ describe('CitiesService', () => {
     expect(service.getCity('Vilnius')).toEqual(cities[0]);
   }));
 
-  it('should give null city if cant find city by name or name is null or undefined', inject([CitiesService], (service: CitiesService) => {
+  it('should give null city if cant find city by name or name is null', inject([CitiesService], (service: CitiesService) => {
     expect(service.getCity('abc')).toEqual(new City('', '', ''));
     expect(service.getCity(null)).toEqual(new City('', '', ''));
-    expect(service.getCity(undefined)).toEqual(new City('', '', ''));
-  }));
-
-  it('should give the same city instances every time', inject([CitiesService], (service: CitiesService) => {
-    const allCities: City[] = service.getAllCities();
-    const vilnius1: City = service.getCity('Vilnius');
-    const vilnius2: City = service.getCity('Vilnius');
-
-    expect(vilnius1).toBe(vilnius2);
-    expect(vilnius1).toBe(allCities[0]);
-    expect(vilnius2).toBe(allCities[0]);
   }));
 });

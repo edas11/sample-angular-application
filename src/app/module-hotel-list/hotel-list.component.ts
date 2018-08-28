@@ -5,6 +5,7 @@ import { HotelsService } from '../services/hotels.service';
 import { CitiesService } from '../services/cities.service';
 import { Observable } from 'rxjs';
 import { Hotel } from '../data classes/hotel';
+import { Room } from '../data classes/room';
 
 @Component({
   selector: 'app-hotel-list',
@@ -26,26 +27,33 @@ export class HotelListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private hotelService: HotelsService,
     private citiesService: CitiesService) {}
 
-  getMinRoomPrice(hotel: Hotel): Number {
-    let minPrice: Number = Number.MAX_SAFE_INTEGER;
-    hotel.rooms.forEach( (room) => {
-      if (room.price < minPrice) { minPrice = room.price; }
-    });
-    return minPrice;
+  getMinPriceRoom(hotel: Hotel): Room | null {
+    if (hotel.rooms.length > 0) {
+      let minPriceRoom: Room = hotel.rooms[0];
+      hotel.rooms.forEach( (room) => {
+        if (room.isCheaperThan(minPriceRoom)) { minPriceRoom = room; }
+      });
+      return minPriceRoom;
+    } else {
+      return null;
+    }
   }
 
-  getMaxNotMinRoomPrice(hotel: Hotel): Number {
-    const minPrice = this.getMinRoomPrice(hotel);
+  getMaxNotMinPriceRoom(hotel: Hotel): Room | null {
+    const minPriceRoom: Room | null = this.getMinPriceRoom(hotel);
+    if (hotel.rooms.length === 0 && !minPriceRoom) {
+      return null;
+    }
 
-    let maxPrice: Number = Number.MIN_SAFE_INTEGER;
+    let maxPriceRoom: Room = hotel.rooms[0];
     hotel.rooms.forEach( (room) => {
-      if (room.price > maxPrice) { maxPrice = room.price; }
+      if (room.isMoreExpensiveThan(maxPriceRoom)) { maxPriceRoom = room; }
     });
 
-    if (maxPrice === minPrice) {
-      return null;
+    if (maxPriceRoom !== minPriceRoom) {
+      return maxPriceRoom;
     } else {
-      return maxPrice;
+      return null;
     }
   }
 

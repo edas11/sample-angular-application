@@ -12,23 +12,18 @@ export class UserReviews {
     private _reviewsNumber: Number;
 
     constructor(input: UserReviewsInput) {
-        if (input) {
-            this._avgRating = input.avgRating;
-            this._reviewsNumber = input.reviewsNumber;
-        } else {
-            this._avgRating = 0;
-            this._reviewsNumber = 0;
-        }
+        this._avgRating = input.avgRating;
+        this._reviewsNumber = input.reviewsNumber;
         validateSync(this).forEach( (error) => {
             this[error.property.toString()] = 0;
         });
     }
 
-    get avgRating() {
-        return this._avgRating;
+    get avgRating(): String {
+        return this._avgRating.toFixed(1);
     }
 
-    get reviewsNumber() {
-        return this._reviewsNumber;
+    get reviewsNumber(): String {
+        return this._reviewsNumber.toFixed(0);
     }
 }

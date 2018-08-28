@@ -20,7 +20,7 @@ export class HotelsService {
     if (hotelResult) {
       return hotelResult;
     } else {
-      return new Hotel('', '', null, 0, {avgRating: 0, reviewsNumber: 0}, '', [''], [''], [null], '');
+      return Hotel.nullHotel();
     }
   }
   getHotelsByCity(city: City): Hotel[] {
