@@ -12,8 +12,10 @@
   <section>
 
     <div class='hotel-main-info ui-g'>
+      <div class='hotel-img-item'>
       <div class='hotel-img-container'>
           <img class='hotel-img' [src]='hotel.imgBigSrc'/>
+      </div>
       </div>
       <div class='hotel-description'>
         <header>
@@ -57,9 +59,11 @@
         <ng-container *ngFor="let room of hotel.rooms">
         <div class='room ui-g'>
           <div class='room-name'>{{room.roomName}}</div>
+          <div class='room-img-item'>
           <div class='room-img-container'>
             <img class='room-img' [src]='room.roomImgSrc'/>
           </div>
+        </div>
           <div class='room-info'>
             <div class='room-sleeps'>
               <span class='room-sleeps-label'>Sleeps:</span>

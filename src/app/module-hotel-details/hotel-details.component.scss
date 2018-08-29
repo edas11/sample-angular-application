@@ -1,8 +1,14 @@
 @import 'variables';
 
 $hotel-img-width: 500px;
+$hotel-img-height: 333px;
+
 $room-img-width: 200px;
+$room-img-height: 133px;
+$room-img-width-mobile-big: 180px;
+$room-img-height-mobile-big: 120px;
 $room-img-width-mobile: 150px;
+$room-img-height-mobile: 100px;
 main{
     width: 90%;
     margin: auto;
@@ -36,7 +42,12 @@ header#main{
 
 .hotel-main-info{
     .hotel-img-container{
+        min-width: $hotel-img-width;
+        padding-top: 100% * $hotel-img-height/$hotel-img-width;
+        position: relative;
         img{
+            position: absolute;
+            top: 0;
             width: $hotel-img-width;
         }
     }
@@ -72,7 +83,14 @@ header#main{
         width: 50%;
         padding-left: 10px;
 
+        .room-img-container{
+            position: relative;
+            min-width: $room-img-width;
+            padding-top: 100% * $room-img-height/$room-img-width
+        }
         img.room-img{
+            position: absolute;
+            top: 0;
             width: $room-img-width;
         }
         .room-name{
@@ -141,9 +159,13 @@ header#main{
     }
 
     .hotel-main-info{
+        .hotel-img-item{
+            width: 100%;
+        }
         .hotel-img-container{
             width: 90%;
             margin: auto;
+            min-width: 0;
             img{
                 width: 100%;
             }
@@ -246,16 +268,24 @@ header#main{
                 padding-left: 3px;
             }
         }
+        .room-img-container{
+            min-width: $room-img-width-mobile-big;
+            padding-top: 100% * $room-img-height-mobile-big/$room-img-width-mobile-big;
+        }
         img.room-img{
-            width: $room-img-width-mobile+30px;
+            width: $room-img-width-mobile-big;
         }
         .room-info{
-            width: calc(100% - #{$room-img-width-mobile+30px});
+            width: calc(100% - #{$room-img-width-mobile-big});
         }
     }
 }
 @media only screen and (max-width: 350px) {
     .hotel-rooms-list .room{
+        .room-img-container{
+            min-width: $room-img-width-mobile;
+            padding-top: 100% * $room-img-height-mobile/$room-img-width-mobile;
+        }
         img.room-img{
             width: $room-img-width-mobile;
         }

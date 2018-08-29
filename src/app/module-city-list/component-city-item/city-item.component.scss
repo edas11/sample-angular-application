@@ -1,5 +1,6 @@
 @import 'variables';
 
+$img-aspect-ratio: $max-city-picture-height/$max-city-picture-width;
 .city{
     max-width: $max-city-picture-width;
 }
@@ -12,7 +13,13 @@
 .city-meta{
     color: $main-color;
 }
+.city-img-container{
+    padding-top: 100% * $img-aspect-ratio;
+    position: relative;
+}
 .city-image{
+    position: absolute;
+    top: 0;
     width: 100%;
 }
 .city-seperator{

@@ -14,7 +14,9 @@
         </a>
       </div>
       <a [routerLink]="['/hotels', hotel.hotelName]" class='hotel-img'>
+        <div class='hotel-img-container'>
         <img [src]='hotel?.imgSrc'/>
+        </div>
       </a>
       <div class='hotel-content ui-g'>
         <div class='hotel-description'>
