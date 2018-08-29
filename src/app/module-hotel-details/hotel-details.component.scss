@@ -160,11 +160,10 @@ header#main{
 
     .hotel-main-info{
         .hotel-img-item{
-            width: 100%;
-        }
-        .hotel-img-container{
             width: 90%;
             margin: auto;
+        }
+        .hotel-img-container{
             min-width: 0;
             img{
                 width: 100%;
@@ -204,7 +203,7 @@ header#main{
         .hotel-features{
             width: 100%;
         }
-        .hotel-img-container{
+        .hotel-img-item{
             width: 100%;
         }
     }
