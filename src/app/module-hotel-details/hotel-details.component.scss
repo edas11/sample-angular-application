@@ -2,6 +2,7 @@
 
 $hotel-img-width: 500px;
 $room-img-width: 200px;
+$room-img-width-mobile: 150px;
 main{
     width: 90%;
     margin: auto;
@@ -49,7 +50,7 @@ header#main{
         width: 50%;
 
         .hotel-features-list{
-            padding-left: 5px;
+            padding-left: 10px;
         }
         .hotel-feature{
             width: 50%;
@@ -69,19 +70,21 @@ header#main{
     .room{
         position: relative;
         width: 50%;
+        padding-left: 10px;
 
         img.room-img{
             width: $room-img-width;
+        }
+        .room-name{
+            color: $main-color;
+            //font-weight: bold;
+            padding-bottom: 5px; 
+            width: 100%;
         }
         .room-info{
             width: calc(100% - #{$room-img-width});
             padding: 0 10px 20px 10px;
 
-            .room-name{
-                color: $main-color;
-                font-weight: bold;
-                padding-bottom: 15px; 
-            }
             .room-reserve{
                 position: absolute;
                 bottom: 0;
@@ -163,6 +166,7 @@ header#main{
     .hotel-rooms-list .room{
         width: 100%;
         margin-bottom: 40px;
+        padding-left: 10%;
 
         .room-info{
             padding-right: 0; 
@@ -170,12 +174,6 @@ header#main{
         .room-name{
             font-size: $font-size-small;
             padding-bottom: 8px !important;
-        }
-        .room-sleeps, .room-price{
-            display: inline-block;
-        }
-        .room-sleeps{
-            width: 60%;
         }
     }
 }
@@ -188,10 +186,6 @@ header#main{
             width: 100%;
         }
     }
-    .hotel-rooms-list .room .room-price{
-        position: absolute;
-        right: 0;
-    }
 }
 @media only screen and (max-width: 550px) {
     .hotel-header h1{
@@ -202,6 +196,7 @@ header#main{
         margin: auto;
     }
     .hotel-rooms-list .room{
+        padding-left: 2%;
         .room-name{
             font-size: $font-size-small;
             padding-bottom: 8px !important;
@@ -219,5 +214,53 @@ header#main{
 @media only screen and (max-width: 450px) {
     .hotel-rooms-list{
         width: 100%;
+    }
+    main, .hotel-description{
+        font-size: $font-size-very-small !important;
+    }
+    .hotel-rooms-list .room .room-name{
+        font-size: $font-size-standard-small !important;
+    }
+    .hotel-rooms-list .room{
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .hotel-rooms-list{
+        width: 100%;
+    }
+    .hotel-rooms-list .room{
+        .room-info{
+            font-size: $font-size-very-small;
+
+            .room-sleeps{
+                padding-bottom: 2px;
+            }
+            .room-sleeps-label, .room-price-label{
+                padding-right: 3px;
+            }
+            .room-sleeps i{
+                padding-right: 3px;
+            }
+            .room-sleeps-number{
+                padding-left: 3px;
+            }
+        }
+        img.room-img{
+            width: $room-img-width-mobile+30px;
+        }
+        .room-info{
+            width: calc(100% - #{$room-img-width-mobile+30px});
+        }
+    }
+}
+@media only screen and (max-width: 350px) {
+    .hotel-rooms-list .room{
+        img.room-img{
+            width: $room-img-width-mobile;
+        }
+        .room-info{
+            width: calc(100% - #{$room-img-width-mobile});
+        }
     }
 }
