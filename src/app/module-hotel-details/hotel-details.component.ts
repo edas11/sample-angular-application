@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { HotelsService } from '../services/hotels.service';
+import { IconsMappingService } from '../services/icons-mapping.service';
+import { Hotel } from '../data classes/hotel';
 
 @Component({
   selector: 'app-hotel-details',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelDetailsComponent implements OnInit {
 
-  constructor() { }
+  hotel: Hotel;
+
+  constructor(private route: ActivatedRoute, private hotelService: HotelsService, 
+    public icons: IconsMappingService) { }
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      map((params: ParamMap) => {
+        return this.hotelService.getHotel(params.get('hotelName') as string);
+      }
+      )
+    ).subscribe( (hotel: Hotel) => {
+      this.hotel = hotel;
+    });
   }
 
 }

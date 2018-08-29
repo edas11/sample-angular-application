@@ -85,11 +85,6 @@ header#main{
             width: calc(100% - #{$room-img-width});
             padding: 0 10px 20px 10px;
 
-            .room-reserve{
-                position: absolute;
-                bottom: 0;
-            }
-
             .room-sleeps{
                 padding-bottom: 3px;
             }
@@ -109,6 +104,11 @@ header#main{
             }
         }
     }
+}
+
+.room-reserve{
+    position: absolute;
+    bottom: 5px;
 }
 
 @media only screen and (max-width: 1000px) {

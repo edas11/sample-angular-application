@@ -1,47 +1,37 @@
 <main>
   <header id='main' class='ui-g'>
     <div class='hotel-header'>
-      <h1>Radisson Blu Hotel Lietuva</h1>
-      <div>Konstitucijos pr. 20, Snipiskes, Vilnius</div>
+      <h1>{{hotel.hotelName}}</h1>
+      <div>{{hotel.street}}, {{hotel.city.cityName}}</div>
     </div>
     <div class='hotel-rating'>
-      <app-w-rating [rating]='4' class='hotel-star-rating'></app-w-rating>
-      <div class='hotel-reviews'>9.0 in 1436 reviews</div>
+      <app-w-rating [rating]='hotel.rating' class='hotel-star-rating'></app-w-rating>
+      <div class='hotel-reviews'>{{hotel.userReviews.avgRating}} in {{hotel.userReviews.reviewsNumber}} reviews</div>
     </div>
   </header>
   <section>
 
     <div class='hotel-main-info ui-g'>
       <div class='hotel-img-container'>
-          <img class='hotel-img' src='assets/hotels/radisson-blu-big.jpg'/>
+          <img class='hotel-img' [src]='hotel.imgBigSrc'/>
       </div>
       <div class='hotel-description'>
         <header>
           <h3>Description</h3>
         </header>
-        <div>The elegant 4-star Radisson Blu Hotel Lietuva is located on the banks of the River Neris in the center of Vilnius. It offers on-site parking, spacious rooms with free Wi-Fi, and a fitness center.</div>
+        <div>{{hotel.description}}</div>
       </div>
       <div class='hotel-features'>
         <header>
           <h3>Facilities</h3>
         </header>
         <div class='hotel-features-list ui-g'>
+          <ng-container *ngFor="let facility of hotel.facilities">
           <div class=hotel-feature>
-            <i class="fas fa-parking"></i>
-            <span>Parking</span>
+            <i [class]="icons.getIconClassesByKey(facility)"></i>
+            <span>{{facility}}</span>
           </div>
-          <div class=hotel-feature>
-            <i class="fas fa-wifi"></i>
-            <span>Free WiFi</span>
-          </div>
-          <div class=hotel-feature>
-            <i class="fas fa-utensils"></i>
-            <span>Food and drink</span>
-          </div>
-          <div class=hotel-feature>
-            <i class="fas fa-plane-arrival"></i>
-            <span>Airport shuttle</span>
-          </div>
+          </ng-container>
         </div>
       </div>
       <div class='hotel-features'>
@@ -49,22 +39,12 @@
           <h3>Activities</h3>
         </header>
         <div class='hotel-features-list ui-g'>
+            <ng-container *ngFor="let activity of hotel.activities">
             <div class=hotel-feature>
-              <i class="fas fa-cocktail"></i>
-              <span>Club</span>
+              <i [class]="icons.getIconClassesByKey(activity)"></i>
+              <span>{{activity}}</span>
             </div>
-            <div class=hotel-feature>
-              <i class="fas fa-bicycle"></i>
-              <span>Cycling</span>
-            </div>
-            <div class=hotel-feature>
-              <i class="fas fa-dumbbell"></i>
-              <span>Fitness Centre</span>
-            </div>
-            <div class=hotel-feature>
-              <i class="fas fa-hot-tub"></i>
-              <span>Hot tub</span>
-            </div>
+            </ng-container>
           </div>
       </div>
     </div>
@@ -74,46 +54,28 @@
         <h3>Available rooms</h3>
       </header>
       <div class='hotel-rooms-list ui-g'>
-
+        <ng-container *ngFor="let room of hotel.rooms">
         <div class='room ui-g'>
-          <div class='room-name'>Standard Room</div>
+          <div class='room-name'>{{room.roomName}}</div>
           <div class='room-img-container'>
-            <img class='room-img' src='assets/rooms/radisson-standard-room.jpg'/>
+            <img class='room-img' [src]='room.roomImgSrc'/>
           </div>
           <div class='room-info'>
             <div class='room-sleeps'>
               <span class='room-sleeps-label'>Sleeps:</span>
+              <ng-container *ngFor="let i of room.sleepsNumberArray()">
               <i class='fas fa-bed'></i>
-              <i class='fas fa-bed'></i>
-              <span class='room-sleeps-number'>(2)</span>
+              </ng-container>
+              <span class='room-sleeps-number'>({{room.sleeps}})</span>
             </div>
             <div class='room-price'>
               <span class='room-price-label'>Price:</span>
-              <b>€129.00</b>
+              <b>€{{room.price}}</b>
             </div>
-            <div class='room-reserve'>Reserve</div>
+            <app-w-button class='room-reserve' buttonText='Reserve'></app-w-button>
           </div>
         </div>
-        <div class='room ui-g'>
-          <div class='room-name'>Superior Room</div>
-          <div class='room-img-container'>
-            <img class='room-img' src='assets/rooms/radisson-superior-room.jpg'/>
-          </div>
-          <div class='room-info'>
-            <div class='room-sleeps'>
-              <span class='room-sleeps-label'>Sleeps:</span>
-              <i class='fas fa-bed'></i>
-              <i class='fas fa-bed'></i>
-              <span class='room-sleeps-number'>(2)</span>
-            </div>
-            <div class='room-price'>
-              <span class='room-price-label'>Price:</span>
-              <b>€135.00</b>
-            </div>
-            <div class='room-reserve'>Reserve</div>
-          </div>
-        </div>
-
+        </ng-container>
       </div>
     </div>
 

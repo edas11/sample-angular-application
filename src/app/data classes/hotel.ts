@@ -15,6 +15,7 @@ export class Hotel {
     private _activities: String[];
     private _rooms: Room[];
     private _imgSrc: String;
+    private _imgBigSrc: String;
 
     @IsInt()
     @Min(0)
@@ -23,7 +24,7 @@ export class Hotel {
 
     constructor(hotelName: String, street: String, city: City, rating: Number,
         userReviews: UserReviewsInput, description: String, facilities: String[],
-        activities: String[], rooms: Room[], imgSrc: String) {
+        activities: String[], rooms: Room[], imgSrc: String, imgBigSrc: String) {
         this._hotelName = hotelName;
         this._street = street;
         this._city = city;
@@ -34,6 +35,7 @@ export class Hotel {
         this._activities = activities;
         this._rooms = rooms;
         this._imgSrc = imgSrc;
+        this._imgBigSrc = imgBigSrc;
 
         validateSync(this).forEach( (error) => {
             this[error.property.toString()] = 0;
@@ -41,7 +43,7 @@ export class Hotel {
     }
 
     static nullHotel(): Hotel {
-        return new Hotel('', '', City.nullCity(), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '');
+        return new Hotel('', '', City.nullCity(), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '', '');
     }
 
     public get hotelName(): String {
@@ -73,6 +75,9 @@ export class Hotel {
     }
     public get imgSrc(): String {
         return this._imgSrc;
+    }
+    public get imgBigSrc(): String {
+        return this._imgBigSrc;
     }
 
 }

@@ -8,9 +8,10 @@ import { WInfoPopupComponent } from './component-w-info-popup/w-info-popup.compo
 import { WMobileNavComponent } from './component-w-mobile-nav/w-mobile-nav.component';
 import { WRatingComponent } from './component-w-rating/w-rating.component';
 import { FormsModule } from '@angular/forms';
+import { WButtonComponent } from './component-w-button/w-button.component';
 
 @NgModule({
-  declarations: [WInfoPopupComponent, WMobileNavComponent, WRatingComponent],
+  declarations: [WInfoPopupComponent, WMobileNavComponent, WRatingComponent, WButtonComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     WInfoPopupComponent,
     WMobileNavComponent,
-    WRatingComponent
+    WRatingComponent,
+    WButtonComponent
   ]
 })
 export class WidgetsModule { }

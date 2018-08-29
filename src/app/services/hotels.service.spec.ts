@@ -24,7 +24,7 @@ describe('HotelsService', () => {
   }));
 
   it('should give null hotel if name not found', inject([HotelsService], (service: HotelsService) => {
-    const nullHotel = new Hotel('', '', new City('', '', ''), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '');
+    const nullHotel = new Hotel('', '', new City('', '', ''), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '', '');
     expect(service.getHotel('abc')).toEqual(nullHotel);
   }));
 
