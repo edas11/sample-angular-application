@@ -7,12 +7,17 @@ export class Room {
 
     @IsInt()
     @Min(0)
+    private _id: Number;
+
+    @IsInt()
+    @Min(0)
     private _sleeps: Number;
 
     @Min(0)
     private _price: Number;
 
-    constructor(roomName: String, sleeps: Number, price: Number, roomImgSrc: String) {
+    constructor(id: Number, roomName: String, sleeps: Number, price: Number, roomImgSrc: String) {
+        this._id = id;
         this._roomName = roomName;
         this._sleeps = sleeps;
         this._price = price;
@@ -33,6 +38,9 @@ export class Room {
         return parseFloat(this._price.toFixed(2)) === parseFloat(room._price.toFixed(2));
     }
 
+    public get id(): String {
+        return this._id.toFixed(0);
+    }
     public get roomName(): String {
         return this._roomName;
     }

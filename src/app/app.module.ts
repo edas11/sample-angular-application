@@ -10,6 +10,7 @@ import { AppRuotingModule } from './app-ruoting.module';
 import { CityListModule } from './module-city-list/city-list.module';
 import { HotelListModule } from './module-hotel-list/hotel-list.module';
 import { HotelDetailsModule } from './module-hotel-details/hotel-details.module';
+import { HotelRoomReserveModule } from './module-hotel-room-reserve/hotel-room-reserve.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HotelDetailsModule } from './module-hotel-details/hotel-details.module'
     CityListModule,
     HotelListModule,
     HotelDetailsModule,
+    HotelRoomReserveModule,
     AppRuotingModule
   ],
   providers: [],

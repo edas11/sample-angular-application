@@ -76,7 +76,9 @@
               <span class='room-price-label'>Price:</span>
               <b>€{{room.price}}</b>
             </div>
-            <app-w-button class='room-reserve' buttonText='Reserve'></app-w-button>
+            <a [routerLink]="['/hotels/reserve-room', room.id]">
+              <app-w-button class='room-reserve' buttonText='Reserve'></app-w-button>
+            </a>
           </div>
         </div>
         </ng-container>
