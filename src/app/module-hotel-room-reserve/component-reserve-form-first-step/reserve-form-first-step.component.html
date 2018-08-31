@@ -1,17 +1,7 @@
 <div class='ui-g' [formGroup]='formGroup'>
   <div class='first-col' formGroupName='first'>
-    <mat-form-field>
-      <input formControlName="checkInDate" matInput [matDatepicker]="pickerCheckIn" 
-        placeholder="Choose a date" name='checkIn'>
-      <mat-datepicker-toggle matSuffix [for]="pickerCheckIn"></mat-datepicker-toggle>
-      <mat-datepicker #pickerCheckIn></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input formControlName="checkOutDate" matInput [matDatepicker]="pickerCheckOut"
-        placeholder="Choose a date" name='checkOutDate'>
-      <mat-datepicker-toggle matSuffix [for]="pickerCheckOut"></mat-datepicker-toggle>
-      <mat-datepicker #pickerCheckOut></mat-datepicker>
-    </mat-form-field>
+    <p-calendar formControlName="checkInDate"></p-calendar>
+    <p-calendar formControlName="checkOutDate"></p-calendar>
   </div>
   <div class='second-col'>
       <div>Total price:</div>

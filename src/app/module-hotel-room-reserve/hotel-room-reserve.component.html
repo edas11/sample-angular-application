@@ -6,13 +6,29 @@
 
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <mat-horizontal-stepper linear>
+
+      <ng-template matStepperIcon="number" let-index="index">
+            <div class='mat-number'>
+            <span class='mat-icon-num'>{{index+1}}</span>
+            </div>
+        </ng-template>
+        <ng-template matStepperIcon="edit" let-index="index">
+            <span class='mat-icon-num'>{{index+1}}</span>
+        </ng-template>
+        <ng-template matStepperIcon="done" let-index="index">
+            <span class='mat-icon-num'>{{index+1}}</span>
+        </ng-template>
+
         <mat-step [stepControl]="first">
+            <ng-template matStepLabel>Fill out your name</ng-template>
             <app-reserve-form-first-step [formGroup]="formGroup"></app-reserve-form-first-step>
         </mat-step>
         <mat-step formGroupName="second" [stepControl]="second">
+            <ng-template matStepLabel>Enter details</ng-template>
             <app-reserve-form-second-step [formGroup]="formGroup"></app-reserve-form-second-step>
         </mat-step>
         <mat-step formGroupName="third" [stepControl]="third">
+            <ng-template matStepLabel>Confirm</ng-template>
             <app-reserve-form-third-step [formGroup]="formGroup"></app-reserve-form-third-step>
         </mat-step>
         </mat-horizontal-stepper>

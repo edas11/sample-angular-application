@@ -8,22 +8,18 @@ import { ReserveFormSecondStepComponent } from './component-reserve-form-second-
 import { ReserveFormThirdStepComponent } from './component-reserve-form-third-step/reserve-form-third-step.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
 import { MatStepperModule } from '@angular/material/stepper';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
     CommonModule,
     HotelRoomReserveRoutingModule,
     MatStepperModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule
+    InputTextModule,
+    CalendarModule
   ],
   declarations: [
     HotelRoomReserveComponent,

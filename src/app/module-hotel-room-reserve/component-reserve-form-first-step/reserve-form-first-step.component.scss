@@ -3,9 +3,11 @@ mat-form-field{
 }
 .first-col{
     width: 50%;
+    padding-right: 15px; 
 }
 .second-col{
     position: relative;
+    padding-left: 15px;
     width: 50%;
 
     button{
@@ -13,4 +15,7 @@ mat-form-field{
         bottom: 0;
         right: 0;
     }
+}
+p-calendar{
+    display: block;
 }
