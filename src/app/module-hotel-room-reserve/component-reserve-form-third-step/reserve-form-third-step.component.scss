@@ -1,0 +1,12 @@
+table{
+    width: 100%;
+}
+.buttons{
+    position: relative;
+    width: 100%;
+    
+    button:nth-child(2){
+        position: absolute;
+        right: 0;
+    }
+}

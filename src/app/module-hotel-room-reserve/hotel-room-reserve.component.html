@@ -1,3 +1,20 @@
-<p>
-  hotel-room-reserve works!
-</p>
+<main>
+    <header>
+        <h1>Reservation</h1>
+        <p>Standard room, Radisson Blu Hotel Lietuva</p>
+    </header>
+
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <mat-horizontal-stepper linear>
+        <mat-step [stepControl]="first">
+            <app-reserve-form-first-step [formGroup]="formGroup"></app-reserve-form-first-step>
+        </mat-step>
+        <mat-step formGroupName="second" [stepControl]="second">
+            <app-reserve-form-second-step [formGroup]="formGroup"></app-reserve-form-second-step>
+        </mat-step>
+        <mat-step formGroupName="third" [stepControl]="third">
+            <app-reserve-form-third-step [formGroup]="formGroup"></app-reserve-form-third-step>
+        </mat-step>
+        </mat-horizontal-stepper>
+    </form>
+</main>

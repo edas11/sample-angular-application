@@ -1,0 +1,16 @@
+mat-form-field{
+    display: block;
+}
+.first-col{
+    width: 50%;
+}
+.second-col{
+    position: relative;
+    width: 50%;
+
+    button{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

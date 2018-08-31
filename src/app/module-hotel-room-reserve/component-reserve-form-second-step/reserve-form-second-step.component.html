@@ -1,0 +1,19 @@
+<div class='ui-g' [formGroup]='formGroup'>
+  <div class='first-col' formGroupName='second'>
+    <mat-form-field>
+      <input formControlName='firstName' matInput placeholder="First name" value="">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName='lastName' matInput placeholder="Last name" value="">
+    </mat-form-field>
+  </div>
+  <div class='second-col' formGroupName='second'>
+    <mat-form-field >
+      <input formControlName='email' matInput placeholder="Email" value="">
+    </mat-form-field>
+    <div class='buttons'>
+      <button matStepperPrevious type="button">Back</button>
+      <button matStepperNext type="button">Next</button>
+    </div>
+  </div>
+</div>
