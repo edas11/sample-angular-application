@@ -2,12 +2,12 @@
   <div class='first-col' formGroupName='first'>
     <div class='input-container'>
       <label for="firstName">Check-in date</label>
-      <p-calendar formControlName="checkInDate" [showIcon]="true" 
+      <p-calendar formControlName="checkInDate" [showIcon]="true" [readonlyInput]="true"
         id='checkInDate' name='checkInDate' dateFormat="yy-mm-dd"></p-calendar>
     </div>
     <div class='input-container'>
       <label for="firstName">Check-out date</label>
-      <p-calendar formControlName="checkOutDate" [showIcon]="true"
+      <p-calendar formControlName="checkOutDate" [showIcon]="true" [readonlyInput]="true"
         id='checkOutDate' name='checkOutDate' dateFormat="yy-mm-dd"></p-calendar>
     </div>
   </div>

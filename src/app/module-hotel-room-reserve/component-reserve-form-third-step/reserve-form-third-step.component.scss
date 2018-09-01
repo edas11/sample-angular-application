@@ -14,6 +14,9 @@ table{
         right: 0;
     }
 }
+tr th{
+    text-align: left;
+}
 .desktop-table{
     tr:nth-child(1){
         border-bottom: 1px solid $main-color;
@@ -21,10 +24,32 @@ table{
     tr th:not(:last-child), tr td:not(:last-child){
         border-right: 1px solid $main-color;
     }
-    tr th{
-        text-align: left;
-    }
     td, th{
         padding: 5px;
+    }
+}
+.mobile-table{
+    display: none;
+    td, th{
+        padding: 5px
+    }
+    tr:not(:last-child){
+        border-bottom: 1px solid $main-color;
+    }
+    th{
+        border-right: 1px solid $main-color;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .mobile-table{
+        display: table;
+    }
+    .desktop-table{
+        display: none;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .mobile-table{
+        font-size: 14px;
     }
 }

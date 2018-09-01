@@ -1,4 +1,5 @@
 <div class='ui-g'>
+
   <table class='desktop-table'>
     <tr>
       <th>First Name</th>
@@ -17,6 +18,34 @@
       <td>€50</td>
     </tr>
   </table>
+
+  <table class='mobile-table'>
+    <tr>
+      <th>First Name</th>
+      <td>{{formGroup?.get(['second', 'firstName'])?.value}}</td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td>{{formGroup?.get(['second', 'lastName'])?.value}}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{formGroup?.get(['second', 'email'])?.value}}</td>
+    </tr>
+    <tr>
+      <th>Check-in date</th>
+      <td>{{ date(formGroup?.get(['first', 'checkInDate'])?.value) }}</td>
+    </tr>
+    <tr>
+      <th>Check-out date</th>
+      <td>{{ date(formGroup?.get(['first', 'checkOutDate'])?.value) }}</td>
+    </tr>
+    <tr>
+      <th>Total price</th>
+      <td>€50</td>
+    </tr>
+  </table>
+
   <div class='buttons'>
     <button matStepperPrevious type="button" class='app-button'>Back</button>
     <button type="submit" class='app-button'>Submit</button>

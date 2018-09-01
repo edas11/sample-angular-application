@@ -40,6 +40,7 @@ label{
     font-style: italic;
     color: $link-color;
     padding-right: 15px;
+    padding-left: 0;
     background: none;
     border: none;
 
@@ -74,13 +75,15 @@ label{
 }
 
 
-// Angular material styles for reservation form
+// Angular material and primeng styles for reservation form
 .mat-horizontal-stepper-header-container{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
 }
 .mat-horizontal-stepper-header{
     display: block !important;
+    top: 15px;
+    padding: 0 10px !important;
 }
 .mat-step-header{
     .mat-step-icon, .mat-step-icon-not-touched{
@@ -110,8 +113,17 @@ label{
     padding: 0 !important;
     overflow: visible !important;
 }
+@media only screen and (max-width: 400px) {
+    .mat-step-label{
+        font-size: 13px;
+    }
+}
 
 .ui-calendar{
     width: 100%;
     display: block;
+}
+p-calendar .ui-button{
+    background-color: $main-color;
+    border-color: $main-color;
 }

@@ -3,6 +3,7 @@
 main{
     width: 90%;
     margin: auto;
+    min-height: 500px;
 }
 header{
     margin-bottom: 20px;
@@ -32,4 +33,10 @@ header{
     position: relative;
     left: -1px;
     top: -1px;
+}
+
+@media only screen and (max-width: 800px) {
+    main{
+        width: 100%;
+    }
 }
