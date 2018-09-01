@@ -18,6 +18,13 @@ body{
 main{
     display: block;
 }
+input{
+    width: 100%;
+}
+label{
+    display: block;
+    padding-bottom: 5px;
+}
 
 /* Custom classes styles */
 .bottom-border{
@@ -26,6 +33,22 @@ main{
     height: 1px;
     border-style: solid;
     border-color: $main-color;
+}
+.app-button{
+    display: inline-block;
+    cursor: pointer;
+    font-style: italic;
+    color: $link-color;
+    padding-right: 15px;
+    background: none;
+    border: none;
+
+    &::after{
+        display: block;
+        @extend .bottom-border; 
+        content: "";
+        width: calc(100% + 5px);
+    }
 }
 
 /* PrimeNG styles */
@@ -55,7 +78,6 @@ main{
 .mat-horizontal-stepper-header-container{
     margin-bottom: 20px;
     position: relative;
-    left: -12px;
 }
 .mat-horizontal-stepper-header{
     display: block !important;
@@ -87,4 +109,9 @@ main{
 .mat-horizontal-content-container{
     padding: 0 !important;
     overflow: visible !important;
+}
+
+.ui-calendar{
+    width: 100%;
+    display: block;
 }

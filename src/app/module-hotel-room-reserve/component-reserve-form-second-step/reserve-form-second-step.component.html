@@ -1,16 +1,25 @@
 <div class='ui-g' [formGroup]='formGroup'>
   <div class='first-col' formGroupName='second'>
-      <input formControlName='firstName' placeholder="First name" value=""
-      autocomplete="off" pInputText >
-      <input formControlName='lastName' placeholder="Last name" value=""
-      autocomplete="off" pInputText >
+      <div class='input-container'>
+        <label for="firstName">First name</label>
+        <input formControlName='firstName' placeholder="First name" value=""
+        autocomplete="off" pInputText name='firstName' id='firstName'>
+      </div>
+      <div class='input-container'>
+        <label for="lastName">Last name</label>
+        <input formControlName='lastName' placeholder="Last name" value=""
+        autocomplete="off" pInputText name='lastName' id='lastName'>
+      </div>
   </div>
   <div class='second-col' formGroupName='second'>
-      <input formControlName='email' placeholder="Email" value=""
-      autocomplete="off" pInputText >
+      <div class='input-container'>
+        <label for="email">Email</label>
+        <input formControlName='email' placeholder="Email" value=""
+        autocomplete="off" pInputText name='email' id='email'>
+      </div>
     <div class='buttons'>
-      <button matStepperPrevious type="button">Back</button>
-      <button matStepperNext type="button">Next</button>
+      <button matStepperPrevious type="button" class='app-button'>Back</button>
+      <button matStepperNext type="button" class='app-button'>Next</button>
     </div>
   </div>
 </div>

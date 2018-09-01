@@ -1,11 +1,19 @@
 <div class='ui-g' [formGroup]='formGroup'>
   <div class='first-col' formGroupName='first'>
-    <p-calendar formControlName="checkInDate"></p-calendar>
-    <p-calendar formControlName="checkOutDate"></p-calendar>
+    <div class='input-container'>
+      <label for="firstName">Check-in date</label>
+      <p-calendar formControlName="checkInDate" [showIcon]="true" 
+        id='checkInDate' name='checkInDate' dateFormat="yy-mm-dd"></p-calendar>
+    </div>
+    <div class='input-container'>
+      <label for="firstName">Check-out date</label>
+      <p-calendar formControlName="checkOutDate" [showIcon]="true"
+        id='checkOutDate' name='checkOutDate' dateFormat="yy-mm-dd"></p-calendar>
+    </div>
   </div>
   <div class='second-col'>
       <div>Total price:</div>
       <div>€</div>
-      <button matStepperNext type="button">Next</button>
+      <button matStepperNext type="button" class='app-button'>Next</button>
   </div>
 </div>

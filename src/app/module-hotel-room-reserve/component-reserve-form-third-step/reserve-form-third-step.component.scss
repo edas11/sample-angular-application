@@ -1,5 +1,9 @@
+@import 'variables';
+
 table{
     width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 .buttons{
     position: relative;
@@ -8,5 +12,19 @@ table{
     button:nth-child(2){
         position: absolute;
         right: 0;
+    }
+}
+.desktop-table{
+    tr:nth-child(1){
+        border-bottom: 1px solid $main-color;
+    }
+    tr th:not(:last-child), tr td:not(:last-child){
+        border-right: 1px solid $main-color;
+    }
+    tr th{
+        text-align: left;
+    }
+    td, th{
+        padding: 5px;
     }
 }

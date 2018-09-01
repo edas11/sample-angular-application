@@ -15,4 +15,14 @@ export class ReserveFormThirdStepComponent implements OnInit {
   ngOnInit() {
   }
 
+  date(dateString: string): string {
+    const parsed = Date.parse(dateString);
+    if (parsed) {
+      const originalDate = new Date(parsed);
+      const timezoneOffsetDate = new Date(originalDate.getTime() - (originalDate.getTimezoneOffset() * 60000));
+      return timezoneOffsetDate.toISOString().split('T')[0];
+    } else {
+      return '';
+    }
+  }
 }
