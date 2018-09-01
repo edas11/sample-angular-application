@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HotelsService } from '../services/hotels.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Hotel } from '../data classes/hotel';
+import { Room } from '../data classes/room';
 
 @Component({
   selector: 'app-hotel-room-reserve',
@@ -22,10 +27,29 @@ export class HotelRoomReserveComponent implements OnInit {
       
     }),
   });
+  public hotel: Hotel;
+  public room: Room | null;
+  private _roomId: string;
 
-  constructor() {}
+  constructor(private hotels: HotelsService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      map((params: ParamMap) => {
+        this._roomId = params.get('roomId') as string;
+        const hotel = this.hotels.getHotelWithRoom(this._roomId);
+        if (hotel) {
+          return this.hotels.getHotelWithRoom(this._roomId);
+        } else {
+          this.router.navigate(['hotels']);
+          return Hotel.nullHotel();
+        }
+      }
+      )
+    ).subscribe( (hotel: Hotel) => {
+      this.hotel = hotel;
+      this.room = hotel.getRoom(this._roomId);
+    });
   }
 
   onSubmit() {

@@ -14,9 +14,9 @@ export class Room {
     private _sleeps: Number;
 
     @Min(0)
-    private _price: Number;
+    private _price: number;
 
-    constructor(id: Number, roomName: String, sleeps: Number, price: Number, roomImgSrc: String) {
+    constructor(id: Number, roomName: String, sleeps: Number, price: number, roomImgSrc: String) {
         this._id = id;
         this._roomName = roomName;
         this._sleeps = sleeps;
@@ -36,6 +36,22 @@ export class Room {
     }
     public isSamePriceAs(room: Room): boolean {
         return parseFloat(this._price.toFixed(2)) === parseFloat(room._price.toFixed(2));
+    }
+
+    calcReservationPrice(checkInDatestr: string, checkOutDateStr: string): string {
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+        const checkInParsed = Date.parse(checkInDatestr);
+        const checkOutParsed = Date.parse(checkOutDateStr); 
+        if (checkInParsed && checkOutParsed && checkOutParsed >= checkInParsed) {
+          const checkInDate = new Date(checkInParsed);
+          const checkOutDate = new Date(checkOutParsed);
+          const utc1 = Date.UTC(checkInDate.getFullYear(), checkInDate.getMonth(), checkInDate.getDate());
+          const utc2 = Date.UTC(checkOutDate.getFullYear(), checkOutDate.getMonth(), checkOutDate.getDate());
+          const price = Math.floor((utc2 - utc1) / _MS_PER_DAY) * this._price;
+          return price.toFixed(2);
+        } else {
+          return '';
+        }
     }
 
     public get id(): String {

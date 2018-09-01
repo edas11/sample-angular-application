@@ -46,6 +46,17 @@ export class Hotel {
         return new Hotel('', '', City.nullCity(), 0, {avgRating: 0, reviewsNumber: 0}, '', [], [], [], '', '');
     }
 
+    getRoom(idStr: string): Room | null {
+        const roomWithId = this._rooms.find( (room: Room) => {
+            return room.id === idStr;
+        });
+        if (roomWithId) {
+            return roomWithId;
+        } else {
+            return null;
+        }
+    }
+
     public get hotelName(): String {
         return this._hotelName;
     }

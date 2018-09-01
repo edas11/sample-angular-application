@@ -71,4 +71,35 @@ describe('Room', () => {
     expect(new Room(1, '', 3, 0, '').sleepsNumberArray().length).toEqual(2);
   });
 
+  it('should calculate reservation price for two valid dates', () => {
+    const room = new Room(1, '', 1, 50, '');
+    let checkIn = 'Sat Sep 01 2018 11:19:43 GMT+0300 (Eastern European Summer Time)';
+    let checkOut = 'Sat Sep 02 2018 11:19:43 GMT+0300 (Eastern European Summer Time)';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('50.00');
+
+    checkIn = 'Sat Oct 27 2018 00:00:00 GMT+0300 (Eastern European Summer Time)';
+    checkOut = 'Mon Oct 29 2018 00:00:00 GMT+0200 (Eastern European Standard Time)';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('100.00');
+  });
+
+  it('reservation price calculation method should return empty string for invalid two dates' +
+    'or if checkOut is earlier than check in', () => {
+    const room = new Room(1, '', 1, 50, '');
+    let checkIn = 'dsagsdhdfsh';
+    let checkOut = 'Sat Sep 02 2018 11:19:43 GMT+0300 (Eastern European Summer Time)';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('');
+
+    checkIn = 'Sat Oct 27 2018 00:00:00 GMT+0300 (Eastern European Summer Time)';
+    checkOut = 'dfbhdfbreager';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('');
+
+    checkIn = 'fghfthdh';
+    checkOut = 'hesthrdrhfdh';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('');
+
+    checkOut = 'Sat Oct 27 2018 00:00:00 GMT+0300 (Eastern European Summer Time)';
+    checkIn = 'Mon Oct 29 2018 00:00:00 GMT+0200 (Eastern European Standard Time)';
+    expect(room.calcReservationPrice(checkIn, checkOut)).toEqual('');
+  });
+
 });

@@ -37,5 +37,13 @@ describe('HotelsService', () => {
       inject([HotelsService], (service: HotelsService) => {
     expect(service.getHotelsByCity(new City('', '', ''))).toEqual([]);
   }));
+
+  it('should give hotel with specific room if there is one and null otherwise',
+      inject([HotelsService], (service: HotelsService) => {
+    expect(service.getHotelWithRoom('1')).toEqual(data[0]);
+    expect(service.getHotelWithRoom('11')).toEqual(data[5]);
+    expect(service.getHotelWithRoom('-1')).toEqual(null);
+    expect(service.getHotelWithRoom('123')).toEqual(null);
+  }));
   
 });

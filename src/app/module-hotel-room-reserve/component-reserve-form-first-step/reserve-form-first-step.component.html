@@ -13,7 +13,9 @@
   </div>
   <div class='second-col'>
       <div>Total price:</div>
-      <div>€</div>
+      <div>
+      €{{room?.calcReservationPrice(formGroup?.get(['first', 'checkInDate'])?.value, formGroup?.get(['first', 'checkOutDate'])?.value)}}
+      </div>
       <button matStepperNext type="button" class='app-button'>Next</button>
   </div>
 </div>

@@ -23,7 +23,19 @@ export class HotelsService {
       return Hotel.nullHotel();
     }
   }
+
   getHotelsByCity(city: City): Hotel[] {
     return this._hotels.filter( (hotel: Hotel) => hotel.city === city );
+  }
+
+  getHotelWithRoom(roomId: string): Hotel | null {
+    const hotelWithRoom = this._hotels.find( (hotel: Hotel) => {
+      return hotel.getRoom(roomId) !== null;
+    });
+    if (hotelWithRoom) {
+      return hotelWithRoom;
+    } else {
+      return null;
+    }
   }
 }

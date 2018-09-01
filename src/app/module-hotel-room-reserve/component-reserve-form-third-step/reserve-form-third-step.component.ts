@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { HotelRoomReserveComponent } from '../hotel-room-reserve.component';
+import { Room } from '../../data classes/room';
 
 @Component({
   selector: 'app-reserve-form-third-step',
@@ -9,6 +11,7 @@ import { FormGroup } from '@angular/forms';
 export class ReserveFormThirdStepComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
+  @Input() room: Room;
   
   constructor() { }
 

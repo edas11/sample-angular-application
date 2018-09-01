@@ -1,7 +1,7 @@
 <main>
     <header>
         <h1>Reservation</h1>
-        <p>Standard room, Radisson Blu Hotel Lietuva</p>
+        <p>{{room?.roomName}} (€{{room?.price}}), {{hotel?.hotelName}}</p>
     </header>
 
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
@@ -21,7 +21,7 @@
 
         <mat-step [stepControl]="first">
             <ng-template matStepLabel>Choose dates</ng-template>
-            <app-reserve-form-first-step [formGroup]="formGroup"></app-reserve-form-first-step>
+            <app-reserve-form-first-step [formGroup]="formGroup" [room]="room"></app-reserve-form-first-step>
         </mat-step>
         <mat-step formGroupName="second" [stepControl]="second">
             <ng-template matStepLabel>Enter details</ng-template>
@@ -29,7 +29,7 @@
         </mat-step>
         <mat-step formGroupName="third" [stepControl]="third">
             <ng-template matStepLabel>Confirm</ng-template>
-            <app-reserve-form-third-step [formGroup]="formGroup"></app-reserve-form-third-step>
+            <app-reserve-form-third-step [formGroup]="formGroup" [room]="room"></app-reserve-form-third-step>
         </mat-step>
         </mat-horizontal-stepper>
     </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Room } from '../../data classes/room';
 
 @Component({
   selector: 'app-reserve-form-second-step',
