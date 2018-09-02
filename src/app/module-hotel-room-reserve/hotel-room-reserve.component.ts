@@ -37,15 +37,9 @@ export class HotelRoomReserveComponent implements OnInit {
     this.route.paramMap.pipe(
       map((params: ParamMap) => {
         this._roomId = params.get('roomId') as string;
-        const hotel = this.hotels.getHotelWithRoom(this._roomId);
-        if (hotel) {
-          return this.hotels.getHotelWithRoom(this._roomId);
-        } else {
-          this.router.navigate(['hotels']);
-          return Hotel.nullHotel();
-        }
-      }
-      )
+        // canActivate guard should ensure that hotel with this room exists
+        return this.hotels.getHotelWithRoom(this._roomId);
+      })
     ).subscribe( (hotel: Hotel) => {
       this.hotel = hotel;
       this.room = hotel.getRoom(this._roomId);
