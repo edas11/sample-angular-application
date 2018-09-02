@@ -2,13 +2,15 @@
   <div class='first-col' formGroupName='first'>
     <div class='input-container'>
       <label for="firstName">Check-in date</label>
-      <p-calendar formControlName="checkInDate" [showIcon]="true" [readonlyInput]="true"
-        id='checkInDate' name='checkInDate' dateFormat="yy-mm-dd"></p-calendar>
+      <p-calendar formControlName="checkInDate" [showIcon]="true" [readonlyInput]="true" dataType='string'
+        id='checkInDate' name='checkInDate' dateFormat="yy-mm-dd" [minDate]="minCheckInDateValue"></p-calendar>
+      <div [ngClass]="{'error-text': !checkIn.valid, 'info-text': checkIn.valid}">*required</div>
     </div>
     <div class='input-container'>
       <label for="firstName">Check-out date</label>
-      <p-calendar formControlName="checkOutDate" [showIcon]="true" [readonlyInput]="true"
-        id='checkOutDate' name='checkOutDate' dateFormat="yy-mm-dd"></p-calendar>
+      <p-calendar formControlName="checkOutDate" [showIcon]="true" [readonlyInput]="true" dataType='string'
+        id='checkOutDate' name='checkOutDate' dateFormat="yy-mm-dd" [minDate]="minCheckOutDateValue"></p-calendar>
+      <div [ngClass]="{'error-text': !checkOut.valid, 'info-text': checkOut.valid}">*required</div>
     </div>
   </div>
   <div class='second-col'>
@@ -16,6 +18,7 @@
       <div>
       €{{room?.calcReservationPrice(formGroup?.get(['first', 'checkInDate'])?.value, formGroup?.get(['first', 'checkOutDate'])?.value)}}
       </div>
+      <div class='error-text' *ngIf='firstStep.errors && checkIn.valid && checkOut.valid'>Check-Out date must be after Check-In date</div>
       <button matStepperNext type="button" class='app-button'>Next</button>
   </div>
 </div>

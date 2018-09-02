@@ -51,6 +51,14 @@ label{
         width: calc(100% + 5px);
     }
 }
+.error-text{
+    color: #de5e5e;
+    padding: 3px 0;
+}
+.info-text{
+    color: #7d7d7d;
+    padding: 3px 0;
+}
 
 /* PrimeNG styles */
 .ui-overlaypanel{

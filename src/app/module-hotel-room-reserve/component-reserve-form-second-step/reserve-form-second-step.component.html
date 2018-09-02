@@ -3,19 +3,22 @@
       <div class='input-container'>
         <label for="firstName">First name</label>
         <input formControlName='firstName' placeholder="First name" value=""
-        pInputText name='firstName' id='firstName'>
+        pInputText name='firstName' id='firstName' type='text'>
+        <div [ngClass]="{'error-text': !firstName.valid, 'info-text': firstName.valid}">*required</div>
       </div>
       <div class='input-container'>
         <label for="lastName">Last name</label>
         <input formControlName='lastName' placeholder="Last name" value=""
-        pInputText name='lastName' id='lastName'>
+        pInputText name='lastName' id='lastName' type='text'>
+        <div [ngClass]="{'error-text': !lastName.valid, 'info-text': lastName.valid}">*required</div>
       </div>
   </div>
   <div class='second-col' formGroupName='second'>
       <div class='input-container'>
         <label for="email">Email</label>
         <input formControlName='email' placeholder="Email" value=""
-        pInputText name='email' id='email'>
+        pInputText name='email' id='email' type='email'>
+        <div [ngClass]="{'error-text': !email.valid, 'info-text': email.valid}">*required</div>
       </div>
     <div class='buttons'>
       <button matStepperPrevious type="button" class='app-button'>Back</button>

@@ -23,11 +23,9 @@ describe('ReserveFormThirdStepComponent', () => {
   });
 
   it('should have date method that formats valid date string in same timezone', () => {
-    expect(component.date('Sat Sep 01 2018 11:19:43 GMT+0300 (Eastern European Summer Time)')).
+    expect(component.date('2018-09-01')).
       toEqual('2018-09-01');
-    expect(component.date('Wed Sep 12 2018 00:00:00 GMT+0300 (Eastern European Summer Time)')).
-      toEqual('2018-09-12');
-    expect(component.date('Wed Sep 12 2018 23:59:59 GMT+0300 (Eastern European Summer Time)')).
+    expect(component.date('2018-09-12')).
       toEqual('2018-09-12');
   });
 

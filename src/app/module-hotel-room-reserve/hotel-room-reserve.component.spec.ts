@@ -29,4 +29,14 @@ describe('HotelRoomReserveComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should check if checkIn is before check Out', () => {
+    expect(component.isCheckOutBeforeOrSame('2018-09-02', '2018-09-03')).toBeFalsy();
+    expect(component.isCheckOutBeforeOrSame('2018-09-02', '2018-09-02')).toBeTruthy();
+    // time shouldnt matter
+    expect(component.isCheckOutBeforeOrSame('2018-09-02 09:00', '2018-09-02 10:00')).toBeTruthy();
+    expect(component.isCheckOutBeforeOrSame('2018-09-02 10:00', '2018-09-02 09:00')).toBeTruthy();
+    expect(component.isCheckOutBeforeOrSame('2018-09-02', '2018-09-01')).toBeTruthy();
+    expect(component.isCheckOutBeforeOrSame('20djdgfj-02', '201djt01')).toBeTruthy();
+  });
+
 });

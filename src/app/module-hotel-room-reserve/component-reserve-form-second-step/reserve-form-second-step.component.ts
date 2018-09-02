@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Room } from '../../data classes/room';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-reserve-form-second-step',
@@ -14,6 +15,19 @@ export class ReserveFormSecondStepComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get firstName() {
+    const firstName = this.formGroup.get(['second', 'firstName']);
+    if (firstName) {return firstName; }
+  }
+  get lastName() {
+    const lastName = this.formGroup.get(['second', 'lastName']);
+    if (lastName) {return lastName; }
+  }
+  get email() {
+    const email = this.formGroup.get(['second', 'email']);
+    if (email) {return email; }
   }
 
 }

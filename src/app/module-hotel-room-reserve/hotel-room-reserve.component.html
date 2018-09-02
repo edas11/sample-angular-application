@@ -1,11 +1,13 @@
 <main>
+    
     <header>
         <h1>Reservation</h1>
         <p>{{room?.roomName}} (€{{room?.price}}), {{hotel?.hotelName}}</p>
     </header>
 
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-        <mat-horizontal-stepper linear>
+      <mat-horizontal-stepper linear
+      (selectionChange)='console.log($event)'>
 
       <ng-template matStepperIcon="number" let-index="index">
             <div class='mat-number'>
@@ -19,15 +21,15 @@
             <span class='mat-icon-num'>{{index+1}}</span>
         </ng-template>
 
-        <mat-step [stepControl]="first">
+        <mat-step [stepControl]="formGroup.get('first')">
             <ng-template matStepLabel>Choose dates</ng-template>
             <app-reserve-form-first-step [formGroup]="formGroup" [room]="room"></app-reserve-form-first-step>
         </mat-step>
-        <mat-step formGroupName="second" [stepControl]="second">
+        <mat-step [stepControl]="formGroup.get('second')">
             <ng-template matStepLabel>Enter details</ng-template>
             <app-reserve-form-second-step [formGroup]="formGroup"></app-reserve-form-second-step>
         </mat-step>
-        <mat-step formGroupName="third" [stepControl]="third">
+        <mat-step>
             <ng-template matStepLabel>Confirm</ng-template>
             <app-reserve-form-third-step [formGroup]="formGroup" [room]="room"></app-reserve-form-third-step>
         </mat-step>

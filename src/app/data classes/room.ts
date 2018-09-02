@@ -1,4 +1,5 @@
 import {validateSync , IsInt, Min, Max} from 'class-validator';
+import * as moment from 'moment';
 
 export class Room {
 
@@ -37,7 +38,7 @@ export class Room {
     public isSamePriceAs(room: Room): boolean {
         return parseFloat(this._price.toFixed(2)) === parseFloat(room._price.toFixed(2));
     }
-
+/*
     calcReservationPrice(checkInDatestr: string, checkOutDateStr: string): string {
         const _MS_PER_DAY = 1000 * 60 * 60 * 24;
         const checkInParsed = Date.parse(checkInDatestr);
@@ -51,6 +52,18 @@ export class Room {
           return price.toFixed(2);
         } else {
           return '';
+        }
+    }
+*/
+    calcReservationPrice(checkInDatestr: string, checkOutDateStr: string): string {
+        const checkIn = moment(checkInDatestr).local();
+        const checkOut = moment(checkOutDateStr).local(); 
+        if (checkIn.isValid() && checkOut.isValid() && checkOut.isAfter(checkIn)) {
+            const dayDiff = checkOut.diff(checkIn, 'days');
+            const price = dayDiff * this._price;
+            return price.toFixed(2);
+        } else {
+            return '';
         }
     }
 

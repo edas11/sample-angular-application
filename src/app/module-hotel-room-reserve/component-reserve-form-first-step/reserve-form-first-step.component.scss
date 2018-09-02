@@ -1,10 +1,11 @@
 .first-col{
     width: 50%;
-    padding-right: 15px; 
+    padding-right: 15px;
 }
 .second-col{
     position: relative;
     padding-left: 15px;
+    padding-bottom: 30px; 
     width: 50%;
 
     button{
@@ -32,6 +33,7 @@
     }
     .second-col{
         width: 100%;
-        padding: 20px 0 0 0;
+        padding-top: 20px;
+        padding-left: 0;
     }
 }
