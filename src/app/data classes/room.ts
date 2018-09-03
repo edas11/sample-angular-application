@@ -29,6 +29,10 @@ export class Room {
         });
     }
 
+    static nullRoom(): Room {
+        return new Room(0, '', 0, 0, '');
+    }
+
     public isCheaperThan(room: Room): boolean {
         return parseFloat(this._price.toFixed(2)) < parseFloat(room._price.toFixed(2));
     }

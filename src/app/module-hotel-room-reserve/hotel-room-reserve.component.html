@@ -6,8 +6,7 @@
     </header>
 
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <mat-horizontal-stepper linear
-      (selectionChange)='console.log($event)'>
+      <mat-horizontal-stepper linear>
 
       <ng-template matStepperIcon="number" let-index="index">
             <div class='mat-number'>
@@ -31,7 +30,7 @@
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Confirm</ng-template>
-            <app-reserve-form-third-step [formGroup]="formGroup" [room]="room"></app-reserve-form-third-step>
+            <app-reserve-form-third-step [formGroup]="formGroup" [room]="room" [isFormSubmited]='isFormSubmited'></app-reserve-form-third-step>
         </mat-step>
         </mat-horizontal-stepper>
     </form>

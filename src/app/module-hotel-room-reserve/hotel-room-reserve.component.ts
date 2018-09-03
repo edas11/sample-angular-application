@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { Hotel } from '../data classes/hotel';
 import { Room } from '../data classes/room';
 import * as moment from 'moment';
+import { Reservation } from '../data classes/reservation';
+import { ReservationService } from '../services/reservation.service';
 
 @Component({
   selector: 'app-hotel-room-reserve',
@@ -15,11 +17,11 @@ import * as moment from 'moment';
 export class HotelRoomReserveComponent implements OnInit {
 
   public hotel: Hotel;
-  public room: Room | null;
+  public room: Room;
+  public isFormSubmited: boolean;
   private _roomId: string;
 
   private checkOutAfterCheckInValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-    console.log('a');
     const checkIn = control.get(['checkInDate']);
     const checkOut = control.get(['checkOutDate']);
     if (checkIn && checkOut) {
@@ -43,29 +45,33 @@ export class HotelRoomReserveComponent implements OnInit {
     })
   });
 
-  constructor(private hotels: HotelsService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private hotels: HotelsService, private route: ActivatedRoute, private router: Router, 
+    private rs: ReservationService) {}
 
   ngOnInit() {
     this.route.paramMap.pipe(
       map((params: ParamMap) => {
+        this.isFormSubmited = false;
         this._roomId = params.get('roomId') as string;
         // canActivate guard should ensure that hotel with this room exists
         return this.hotels.getHotelWithRoom(this._roomId);
       })
     ).subscribe( (hotel: Hotel) => {
       this.hotel = hotel;
-      this.room = hotel.getRoom(this._roomId);
+      this.room = hotel.getRoom(this._roomId) as Room;
     });
   }
 
+  // tslint:disable:no-non-null-assertion
   onSubmit() {
-      const first = this.formGroup.get('first') as FormGroup;
-      const second = this.formGroup.get('second') as FormGroup;
-      console.log(first.get('checkInDate'));
-      console.log(first.get('checkOutDate'));
-      console.log(second.get('firstName'));
-      console.log(second.get('lastName'));
-      console.log(second.get('email'));
+    this.isFormSubmited = true;
+    const firstName = this.formGroup.get(['second', 'firstName'])!.value;
+    const lastName = this.formGroup.get(['second', 'lastName'])!.value;
+    const email = this.formGroup.get(['second', 'email'])!.value;
+    const checkIn = this.formGroup.get(['first', 'checkInDate'])!.value;
+    const checkOut = this.formGroup.get(['first', 'checkOutDate'])!.value;
+    this.rs.addNew(this.room, this.hotel, firstName, lastName, email,
+      checkIn, checkOut, this.room.calcReservationPrice(checkIn, checkOut));
   }
 
   isCheckOutBeforeOrSame(checkIn: string, checkOut: string): boolean {

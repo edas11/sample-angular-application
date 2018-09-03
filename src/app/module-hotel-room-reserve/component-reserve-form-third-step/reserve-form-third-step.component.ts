@@ -12,6 +12,7 @@ export class ReserveFormThirdStepComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
   @Input() room: Room;
+  @Input() isFormSubmited: boolean;
   
   constructor() { }
 
