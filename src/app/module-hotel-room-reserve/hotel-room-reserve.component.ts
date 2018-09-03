@@ -72,6 +72,7 @@ export class HotelRoomReserveComponent implements OnInit {
     const checkOut = this.formGroup.get(['first', 'checkOutDate'])!.value;
     this.rs.addNew(this.room, this.hotel, firstName, lastName, email,
       checkIn, checkOut, this.room.calcReservationPrice(checkIn, checkOut));
+      this.router.navigate(['reservations']);
   }
 
   isCheckOutBeforeOrSame(checkIn: string, checkOut: string): boolean {

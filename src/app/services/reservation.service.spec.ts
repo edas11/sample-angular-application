@@ -41,4 +41,23 @@ describe('ReservationService', () => {
     expect(service.getAll()).toEqual([res1, res2, res3]);
   }));
 
+  it('should allow to delete a reservation',
+    inject([ReservationService], (service: ReservationService) => {
+  const res1Id = service.addNew(Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+  const res2Id = service.addNew(Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+  const res3Id = service.addNew(Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+  const res1 = new Reservation(res1Id, Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+  const res2 = new Reservation(res2Id, Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+  const res3 = new Reservation(res3Id, Room.nullRoom(), Hotel.nullHotel(), '', '', '', '', '', '');
+
+  expect(service.getAll()).toEqual([res1, res2, res3]);
+  service.delete('55');
+  expect(service.getAll()).toEqual([res1, res2, res3]);
+  service.delete(res2Id);
+  expect(service.getAll()).toEqual([res1, res3]);
+  expect(service.get(res1Id)).toEqual(res1);
+  expect(service.get(res2Id)).toEqual(null);
+  expect(service.get(res3Id)).toEqual(res3);
+  }));
+
 });

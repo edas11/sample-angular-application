@@ -11,6 +11,7 @@ import { CityListModule } from './module-city-list/city-list.module';
 import { HotelListModule } from './module-hotel-list/hotel-list.module';
 import { HotelDetailsModule } from './module-hotel-details/hotel-details.module';
 import { HotelRoomReserveModule } from './module-hotel-room-reserve/hotel-room-reserve.module';
+import { ReservationsModule } from './module-reservations/reservations.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HotelRoomReserveModule } from './module-hotel-room-reserve/hotel-room-r
     HotelListModule,
     HotelDetailsModule,
     HotelRoomReserveModule,
+    ReservationsModule,
     AppRuotingModule
   ],
   providers: [],

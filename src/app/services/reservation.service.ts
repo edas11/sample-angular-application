@@ -37,6 +37,15 @@ export class ReservationService {
     return this._reservations.slice();
   }
 
+  delete(id: string): void {
+    const index = this._reservations.findIndex( (res: Reservation) => {
+      return res.id === id;
+    });
+    if (index !== -1) {
+      this._reservations.splice(index, 1);
+    }
+  }
+
   private getIdAndIncrement(): number {
     const roomId = this._nextRoomId;
     this._nextRoomId = this._nextRoomId + 1;

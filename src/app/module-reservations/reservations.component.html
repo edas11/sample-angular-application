@@ -1,0 +1,65 @@
+<main>
+  <header class='main-header'>
+    <h1>Reservations</h1>
+    <p>Manage your reservations</p>
+  </header>
+
+  <section>
+
+    <div class='reservations-none' *ngIf='reservations.length === 0'>No reservations.</div>
+    <ng-container *ngFor="let res of reservations">
+    <div class='reservation'>
+      <header class='reservation-header'>{{res.room.roomName}}, {{res.hotel.hotelName}}</header>
+
+      <table class='desktop-table'>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Check-in date</th>
+          <th>Check-out date</th>
+          <th>Total price</th>
+        </tr>
+        <tr>
+          <td>{{res.firstName}}</td>
+          <td>{{res.lastName}}</td>
+          <td>{{res.email}}</td>
+          <td>{{res.checkInDate}}</td>
+          <td>{{res.checkOutDate}}</td>
+          <td>€{{res.totalPrice}}</td>
+        </tr>
+      </table>
+    
+      <table class='mobile-table'>
+        <tr>
+          <th>First Name</th>
+          <td>{{res.firstName}}</td>
+        </tr>
+        <tr>
+          <th>Last Name</th>
+          <td>{{res.lastName}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{res.email}}</td>
+        </tr>
+        <tr>
+          <th>Check-in date</th>
+          <td>{{res.checkInDate}}</td>
+        </tr>
+        <tr>
+          <th>Check-out date</th>
+          <td>{{res.checkOutDate}}</td>
+        </tr>
+        <tr>
+          <th>Total price</th>
+          <td>€{{res.totalPrice}}</td>
+        </tr>
+      </table>
+
+      <button class='app-button' (click)='cancelReservation(res)'>Cancel</button>
+    </div>
+    </ng-container>
+
+  </section>
+</main>
