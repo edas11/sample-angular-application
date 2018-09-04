@@ -8,6 +8,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Hotel } from '../data classes/hotel';
 import { HotelsData } from '../services/hotels-data';
 import { Room } from '../data classes/room';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HotelListComponent', () => {
   let component: HotelListComponent;
@@ -20,7 +21,8 @@ describe('HotelListComponent', () => {
         {provide: ActivatedRoute, useClass: ActivatedRouteStub}
       ],
       declarations: [ HotelListComponent ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [ NO_ERRORS_SCHEMA ],
+      imports: [ BrowserAnimationsModule ]
     });
 
     fixture = TestBed.createComponent(HotelListComponent);

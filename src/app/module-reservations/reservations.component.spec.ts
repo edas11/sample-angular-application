@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReservationsComponent } from './reservations.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ReservationsComponent', () => {
   let component: ReservationsComponent;
@@ -8,7 +9,8 @@ describe('ReservationsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReservationsComponent ]
+      declarations: [ ReservationsComponent ],
+      imports: [ BrowserAnimationsModule ]
     })
     .compileComponents();
 

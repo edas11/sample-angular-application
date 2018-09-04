@@ -1,25 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
-import { Component } from '@angular/core';
-
-@Component({selector: 'app-w-info-popup', template: ''})
-class InfoPopupComponent { }
-
-@Component({selector: 'app-w-mobile-nav', template: ''})
-class MobileNavComponent { }
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, InfoPopupComponent, MobileNavComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ HeaderComponent],
+      schemas: [ NO_ERRORS_SCHEMA ]
+    });
+
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

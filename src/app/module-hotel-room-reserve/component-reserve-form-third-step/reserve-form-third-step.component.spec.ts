@@ -23,14 +23,14 @@ describe('ReserveFormThirdStepComponent', () => {
   });
 
   it('should have date method that formats valid date string in same timezone', () => {
-    expect(component.date('2018-09-01')).
+    expect(component.formatDate('2018-09-01')).
       toEqual('2018-09-01');
-    expect(component.date('2018-09-12')).
+    expect(component.formatDate('2018-09-12')).
       toEqual('2018-09-12');
   });
 
   it('should have date method that returns empty string if it get invalid date string', () => {
-    expect(component.date('sgfsjjdjyt')).
+    expect(component.formatDate('sgfsjjdjyt')).
       toEqual('');
   });
 });

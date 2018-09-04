@@ -5,6 +5,7 @@ import { CityItemComponent } from './component-city-item/city-item.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CityQueryResult } from '../data classes/city-query-result';
 import { City } from '../data classes/city';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CityListComponent', () => {
   let component: CityListComponent;
@@ -23,7 +24,8 @@ describe('CityListComponent', () => {
       providers: [
         { provide: CitiesQueryService, useValue: citiesDataSpy}
       ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [ NO_ERRORS_SCHEMA ],
+      imports: [ BrowserAnimationsModule ]
     });
 
     fixture = TestBed.createComponent(CityListComponent);

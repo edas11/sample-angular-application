@@ -4,6 +4,7 @@ import { HotelRoomReserveComponent } from './hotel-room-reserve.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRouteStub } from '../activated-route-stub';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HotelRoomReserveComponent', () => {
   let component: HotelRoomReserveComponent;
@@ -17,7 +18,8 @@ describe('HotelRoomReserveComponent', () => {
       providers: [
         {provide: ActivatedRoute, useClass: ActivatedRouteStub},
         { provide: Router,      useValue: routerSpy }
-      ]
+      ],
+      imports: [ BrowserAnimationsModule ]
     });
 
     fixture = TestBed.createComponent(HotelRoomReserveComponent);
