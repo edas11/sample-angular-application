@@ -41,6 +41,9 @@ a.app-link{
     position: relative;
     text-decoration: none;
     padding: 5px 15px;
+    &:hover{
+        background-color: $hover-color;
+    }
 
     i{
         position: relative;
@@ -76,6 +79,10 @@ a.app-link{
         font-size: 20px;
         color: $link-color;
     }
+}
+a.active-link span{
+    color: #00abff;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 800px) {

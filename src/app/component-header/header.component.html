@@ -14,11 +14,11 @@
 
   <div class='main-nav'>
     <div class='main-nav-links'>
-      <a routerLink="/reservations" class='app-link'>
+      <a routerLink="/reservations" class='app-link' routerLinkActive="active-link">
         <i class="fas fa-clipboard-list"></i>
         <span>Reservations</span>
       </a>
-      <a routerLink="/hotels" class='app-link'>
+      <a routerLink="/hotels" class='app-link' routerLinkActive="active-link">
         <i class="fas fa-building"></i>
         <span>Hotels</span>
       </a>
@@ -35,13 +35,13 @@
         Navigation
       </div>
       <div class='app-link-container'>
-        <a routerLink="/reservations" class='app-link' (click)="display = false">
+        <a routerLink="/reservations" class='app-link' (click)="display = false" routerLinkActive="active-link">
           <i class="fas fa-clipboard-list"></i>
           <span>Reservations</span>
         </a>
       </div>
       <div class='app-link-container'>
-        <a routerLink="/hotels" class='app-link' (click)="display = false">
+        <a routerLink="/hotels" class='app-link' (click)="display = false" routerLinkActive="active-link">
           <i class="fas fa-building"></i>
           <span>Hotels</span>
         </a>

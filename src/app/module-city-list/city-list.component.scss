@@ -23,6 +23,9 @@ section{
         padding: 0;
         cursor: pointer;
         padding-bottom: 2*$grid-item-padding;
+        &:hover{
+            background-color: $hover-color;
+        }
     }
     a:nth-child(odd){
         padding-right: $grid-item-padding;
