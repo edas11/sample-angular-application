@@ -1,4 +1,4 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CityListComponent } from './city-list.component';
 import { CityListRoutingModule } from './city-list-routing.module';

@@ -19,6 +19,7 @@ export class HotelDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private hotelService: HotelsService, 
     public icons: IconsMappingService) { }
 
+  // Sets data
   ngOnInit() {
     this.route.paramMap.pipe(
       map((params: ParamMap) => {

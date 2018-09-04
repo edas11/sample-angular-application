@@ -15,6 +15,7 @@ export class CityListComponent implements OnInit {
 
   constructor(private citiesQueryService: CitiesQueryService) { }
 
+  // Sets data
   ngOnInit() {
     this.citiesResult = this.citiesQueryService.queryCities();
   }

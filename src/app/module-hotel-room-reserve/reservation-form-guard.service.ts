@@ -9,6 +9,7 @@ export class ReservationFormGuardService implements CanActivate {
 
   constructor(private hotels: HotelsService, private router: Router) { }
 
+  // Allows to proceed only if it finds room
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const roomId = route.params['roomId'];
     if (this.hotels.getHotelWithRoom(roomId)) {

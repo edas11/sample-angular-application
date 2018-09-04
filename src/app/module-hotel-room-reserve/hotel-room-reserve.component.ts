@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { Hotel } from '../data classes/hotel';
 import { Room } from '../data classes/room';
 import * as moment from 'moment';
-import { Reservation } from '../data classes/reservation';
 import { ReservationService } from '../services/reservation.service';
 import { opacityAnimation } from '../opacity-animation';
 
@@ -50,6 +49,7 @@ export class HotelRoomReserveComponent implements OnInit {
   constructor(private hotels: HotelsService, private route: ActivatedRoute, private router: Router, 
     private rs: ReservationService) {}
 
+  // Sets required data
   ngOnInit() {
     this.route.paramMap.pipe(
       map((params: ParamMap) => {

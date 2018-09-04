@@ -19,7 +19,7 @@ export class ReserveFormThirdStepComponent implements OnInit {
   ngOnInit() {
   }
 
-  date(dateString: string): string {
+  formatDate(dateString: string): string {
     const date = moment(dateString);
     if (date.isValid()) {
       date.local();

@@ -13,6 +13,7 @@ import { opacityAnimation } from '../opacity-animation';
 })
 export class ReservationsComponent implements OnInit {
 
+  // Required so that "No reservations." text would appear after reservations completely disappear
   animationDone = true;
 
   constructor(private rs: ReservationService) { }

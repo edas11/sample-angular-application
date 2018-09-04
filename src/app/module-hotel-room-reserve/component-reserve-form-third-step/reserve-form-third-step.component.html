@@ -13,8 +13,8 @@
       <td>{{formGroup?.get(['second', 'firstName'])?.value}}</td>
       <td>{{formGroup?.get(['second', 'lastName'])?.value}}</td>
       <td>{{formGroup?.get(['second', 'email'])?.value}}</td>
-      <td>{{ date(formGroup?.get(['first', 'checkInDate'])?.value) }}</td>
-      <td>{{ date(formGroup?.get(['first', 'checkOutDate'])?.value) }}</td>
+      <td>{{ formatDate(formGroup?.get(['first', 'checkInDate'])?.value) }}</td>
+      <td>{{ formatDate(formGroup?.get(['first', 'checkOutDate'])?.value) }}</td>
       <td>
       €{{room?.calcReservationPrice(formGroup?.get(['first', 'checkInDate'])?.value, formGroup?.get(['first', 'checkOutDate'])?.value)}}
       </td>
@@ -36,11 +36,11 @@
     </tr>
     <tr>
       <th>Check-in date</th>
-      <td>{{ date(formGroup?.get(['first', 'checkInDate'])?.value) }}</td>
+      <td>{{ formatDate(formGroup?.get(['first', 'checkInDate'])?.value) }}</td>
     </tr>
     <tr>
       <th>Check-out date</th>
-      <td>{{ date(formGroup?.get(['first', 'checkOutDate'])?.value) }}</td>
+      <td>{{ formatDate(formGroup?.get(['first', 'checkOutDate'])?.value) }}</td>
     </tr>
     <tr>
       <th>Total price</th>

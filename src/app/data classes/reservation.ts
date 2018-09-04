@@ -1,6 +1,5 @@
 import { Room } from './room';
 import { Hotel } from './hotel';
-import {validateSync , IsInt, Min} from 'class-validator';
 
 export class Reservation {
 

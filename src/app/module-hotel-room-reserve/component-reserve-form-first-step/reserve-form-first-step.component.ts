@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import * as moment from 'moment';
 import { Room } from '../../data classes/room';
-import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-reserve-form-first-step',

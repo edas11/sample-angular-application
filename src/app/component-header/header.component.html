@@ -27,21 +27,21 @@
   </div>
 
   <div class='mobile-nav'>
-    <div class='main-nav-mobile' (click)="display = true">
+    <div class='main-nav-mobile' (click)="displayMobileNav = true">
         <i class="fas fa-bars"></i>
     </div>
-    <p-sidebar [(visible)]="display" position="top" blockScroll=true>
+    <p-sidebar [(visible)]="displayMobileNav" position="top" blockScroll=true>
       <div class='app-links-label'>
         Navigation
       </div>
       <div class='app-link-container'>
-        <a routerLink="/reservations" class='app-link' (click)="display = false" routerLinkActive="active-link">
+        <a routerLink="/reservations" class='app-link' (click)="displayMobileNav = false" routerLinkActive="active-link">
           <i class="fas fa-clipboard-list"></i>
           <span>Reservations</span>
         </a>
       </div>
       <div class='app-link-container'>
-        <a routerLink="/hotels" class='app-link' (click)="display = false" routerLinkActive="active-link">
+        <a routerLink="/hotels" class='app-link' (click)="displayMobileNav = false" routerLinkActive="active-link">
           <i class="fas fa-building"></i>
           <span>Hotels</span>
         </a>
