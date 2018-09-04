@@ -52,11 +52,11 @@ label{
     }
 }
 .error-text{
-    color: #de5e5e;
+    color: $error-red;
     padding: 3px 0;
 }
 .info-text{
-    color: #7d7d7d;
+    color: $light-gray;
     padding: 3px 0;
 }
 

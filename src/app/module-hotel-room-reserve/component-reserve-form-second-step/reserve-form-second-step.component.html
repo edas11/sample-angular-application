@@ -18,7 +18,17 @@
         <label for="email">Email</label>
         <input formControlName='email' placeholder="Email" value=""
         pInputText name='email' id='email' type='email'>
-        <div [ngClass]="{'error-text': !email?.valid, 'info-text': email?.valid}">*required</div>
+        <div *ngIf="email?.errors?.email;then emailError else defaultError"></div>
+        <ng-template #emailError>
+          <div [ngClass]="{'error-text': !email?.valid, 'info-text': email?.valid}">
+          Invalid email address
+          </div>
+        </ng-template>
+        <ng-template #defaultError>
+          <div [ngClass]="{'error-text': !email?.valid, 'info-text': email?.valid}">
+          *required
+          </div>
+        </ng-template>
       </div>
     <div class='buttons'>
       <button matStepperPrevious type="button" class='app-button'>Back</button>
