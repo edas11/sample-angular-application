@@ -4,11 +4,13 @@ import { map } from 'rxjs/operators';
 import { HotelsService } from '../services/hotels.service';
 import { IconsMappingService } from '../services/icons-mapping.service';
 import { Hotel } from '../data classes/hotel';
+import { opacityAnimation } from '../opacity-animation';
 
 @Component({
   selector: 'app-hotel-details',
   templateUrl: './hotel-details.component.html',
-  styleUrls: ['./hotel-details.component.scss']
+  styleUrls: ['./hotel-details.component.scss'],
+  animations: [ opacityAnimation ]
 })
 export class HotelDetailsComponent implements OnInit {
 

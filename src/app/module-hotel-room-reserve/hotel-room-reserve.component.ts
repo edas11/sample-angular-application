@@ -8,11 +8,13 @@ import { Room } from '../data classes/room';
 import * as moment from 'moment';
 import { Reservation } from '../data classes/reservation';
 import { ReservationService } from '../services/reservation.service';
+import { opacityAnimation } from '../opacity-animation';
 
 @Component({
   selector: 'app-hotel-room-reserve',
   templateUrl: './hotel-room-reserve.component.html',
-  styleUrls: ['./hotel-room-reserve.component.scss']
+  styleUrls: ['./hotel-room-reserve.component.scss'],
+  animations: [ opacityAnimation ]
 })
 export class HotelRoomReserveComponent implements OnInit {
 

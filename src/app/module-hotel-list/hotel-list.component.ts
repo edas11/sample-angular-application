@@ -6,11 +6,13 @@ import { CitiesService } from '../services/cities.service';
 import { Observable } from 'rxjs';
 import { Hotel } from '../data classes/hotel';
 import { Room } from '../data classes/room';
+import { opacityAnimation } from '../opacity-animation';
 
 @Component({
   selector: 'app-hotel-list',
   templateUrl: './hotel-list.component.html',
-  styleUrls: ['./hotel-list.component.scss']
+  styleUrls: ['./hotel-list.component.scss'],
+  animations: [ opacityAnimation ]
 })
 export class HotelListComponent implements OnInit {
 

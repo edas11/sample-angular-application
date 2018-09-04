@@ -1,4 +1,4 @@
-<main>
+<main [@opacity]="'in'">
   <header class='main-header'>
     <h1>Reservations</h1>
     <p>Manage your reservations</p>
@@ -6,9 +6,10 @@
 
   <section>
 
-    <div class='reservations-none' *ngIf='reservations.length === 0'>No reservations.</div>
+    <div class='reservations-none' *ngIf='animationDone && reservations.length === 0'>No reservations.</div>
     <ng-container *ngFor="let res of reservations">
-    <div class='reservation'>
+    <div class='reservation' [@opacity]="'in'" (@opacity.start)="animationDone=false"
+      (@opacity.done)="animationDone=true">
       <header class='reservation-header'>{{res.room.roomName}}, {{res.hotel.hotelName}}</header>
 
       <table class='desktop-table'>
