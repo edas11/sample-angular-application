@@ -1,0 +1,24 @@
+/* Global styles */
+html{
+    height: 100%;
+    font-size: 16px;
+    min-width: $min-page-width;
+    font-family: 'Raleway', sans-serif;
+    color: $dark-gray;
+}
+body{
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+}
+main{
+    display: block;
+}
+input{
+    width: 100%;
+}
+label{
+    display: block;
+    padding-bottom: 5px;
+}

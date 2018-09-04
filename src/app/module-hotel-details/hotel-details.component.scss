@@ -21,19 +21,9 @@ h3{
 header#main{
     position: relative;
     margin-bottom: 20px;
-
-    .hotel-header{
-        h1{
-            margin: 0;
-            color: $main-color;
-            font-weight: bold;
-        }
-        span{
-            margin: 0;
-            margin-top: 5px;
-        }
+    .standard-header{
+        margin-bottom: 0;
     }
-
     .hotel-rating{
         position: absolute;
         right: 0;
@@ -144,7 +134,7 @@ header#main{
 @media only screen and (max-width: 800px) {
     header#main{
         margin-bottom: 10px;
-        .hotel-header{
+        .standard-header{
             width: 100%;
         }
     
@@ -211,7 +201,7 @@ header#main{
     }
 }
 @media only screen and (max-width: 550px) {
-    .hotel-header h1{
+    .standard-header h1{
         font-size: 1.5em;
     }
     .hotel-rooms-list{

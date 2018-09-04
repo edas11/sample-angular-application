@@ -10,17 +10,7 @@ main{
 }
 header{
     margin-bottom: 20px;
-    h1{
-        margin: 0;
-        color: $main-color;
-        font-weight: bold;
-    }
-    p{
-        margin: 0;
-        margin-top: 5px;
-    }
 }
-
 .hotel.hotel:not(:first-child){
     padding-top: 40px;
 }
@@ -63,6 +53,11 @@ header{
     }
     .info{
         margin-top: 40px;
+        padding-top: 3px;
+
+        div:nth-child(2){
+            padding-top: 2px;
+        }
     
         b{
             color: $main-color;

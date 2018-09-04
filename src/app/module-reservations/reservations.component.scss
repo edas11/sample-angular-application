@@ -1,18 +1,5 @@
 @import 'variables';
 
-header.main-header{
-    margin-bottom: 20px;
-    h1{
-        margin: 0;
-        color: $main-color;
-        font-weight: bold;
-    }
-    p{
-        margin: 0;
-        margin-top: 5px;
-    }
-}
-
 .reservation{
     padding: 30px 0;
     header{
@@ -31,48 +18,9 @@ header.main-header{
 }
 
 table{
-    width: 100%;
-    border-collapse: collapse;
     margin-bottom: 8px;
 }
-tr th{
-    text-align: left;
-}
-.desktop-table{
-    tr:nth-child(1){
-        border-bottom: 1px solid $main-color;
-    }
-    tr th:not(:last-child), tr td:not(:last-child){
-        border-right: 1px solid $main-color;
-    }
-    td, th{
-        padding: 5px;
-    }
-}
-.mobile-table{
-    display: none;
-    td, th{
-        padding: 5px
-    }
-    tr:not(:last-child){
-        border-bottom: 1px solid $main-color;
-    }
-    th{
-        border-right: 1px solid $main-color;
-    }
-}
-@media only screen and (max-width: 700px) {
-    .mobile-table{
-        display: table;
-    }
-    .desktop-table{
-        display: none;
-    }
-}
 @media only screen and (max-width: 400px) {
-    .mobile-table{
-        font-size: 14px;
-    }
     .reservation{
         header{
             font-size: $font-size-standard-small;
