@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component-header/header.component';
-import { FooterComponent } from './component-footer/footer.component';
 import { AppRuotingModule } from './app-ruoting.module';
 import { CityListModule } from './module-city-list/city-list.module';
 import { HotelListModule } from './module-hotel-list/hotel-list.module';
@@ -17,8 +16,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
