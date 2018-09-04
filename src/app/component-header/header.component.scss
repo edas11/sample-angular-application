@@ -12,10 +12,16 @@ nav{
     vertical-align: bottom;
     height: 65px;
 }
-app-w-info-popup{
+.info-popup{
+    display: inline-block;
     position: relative;
     bottom: -3px;
     padding-left: 5px;
+}
+.popup{
+    color: $light-gray;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .main-nav{
@@ -23,8 +29,7 @@ app-w-info-popup{
     bottom: $header-padding-top-bottom;
     right: $content-padding-left-right;
 }
-app-w-mobile-nav{
-    display: none;
+.mobile-nav{
     position: absolute;
     top: $header-padding-top-bottom;
     right: $content-padding-left-right;
@@ -62,6 +67,16 @@ a.app-link{
 .nav-underline{
     border-width: 3px;
 }
+.main-nav-mobile{
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+
+    i{
+        font-size: 20px;
+        color: $link-color;
+    }
+}
 
 @media only screen and (max-width: 800px) {
     .main-nav-links{
@@ -75,7 +90,7 @@ a.app-link{
     .main-nav{
         display: none;
     }
-    app-w-mobile-nav{
+    .main-nav-mobile{
         display: block;
     }
 }
@@ -83,7 +98,7 @@ a.app-link{
     nav{
         padding: $header-padding-top-bottom $content-padding-left-right-mobile;
     }
-    app-w-mobile-nav{
+    .mobile-nav{
         right: $content-padding-left-right-mobile; 
     }
 }

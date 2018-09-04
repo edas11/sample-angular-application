@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WidgetsModule } from './module-widgets/widgets.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component-header/header.component';
@@ -12,6 +11,8 @@ import { HotelListModule } from './module-hotel-list/hotel-list.module';
 import { HotelDetailsModule } from './module-hotel-details/hotel-details.module';
 import { HotelRoomReserveModule } from './module-hotel-room-reserve/hotel-room-reserve.module';
 import { ReservationsModule } from './module-reservations/reservations.module';
+import { SidebarModule } from 'primeng/sidebar';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReservationsModule } from './module-reservations/reservations.module';
   ],
   imports: [
     BrowserModule,
-    WidgetsModule,
+    SidebarModule,
+    OverlayPanelModule,
     BrowserAnimationsModule,
     CityListModule,
     HotelListModule,
