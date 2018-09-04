@@ -4,11 +4,12 @@ $hotel-img-width: 500px;
 $hotel-img-height: 375px;
 
 $room-img-width: 200px;
-$room-img-height: 133px;
+$room-img-height: 126px;
 $room-img-width-mobile-big: 180px;
 $room-img-height-mobile-big: 120px;
 $room-img-width-mobile: 150px;
 $room-img-height-mobile: 100px;
+$room-img-aspect-ratio: $room-img-height/$room-img-width;
 main{
     width: 90%;
     margin: auto;
@@ -86,7 +87,8 @@ header#main{
         .room-img-container{
             position: relative;
             min-width: $room-img-width;
-            padding-top: 100% * $room-img-height/$room-img-width
+            padding-top: 100% * $room-img-aspect-ratio;
+            overflow: hidden;
         }
         img.room-img{
             position: absolute;
@@ -126,7 +128,7 @@ header#main{
 
 .room-reserve{
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -269,7 +271,7 @@ header#main{
         }
         .room-img-container{
             min-width: $room-img-width-mobile-big;
-            padding-top: 100% * $room-img-height-mobile-big/$room-img-width-mobile-big;
+            padding-top: 100% * $room-img-aspect-ratio;
         }
         img.room-img{
             width: $room-img-width-mobile-big;
@@ -283,7 +285,7 @@ header#main{
     .hotel-rooms-list .room{
         .room-img-container{
             min-width: $room-img-width-mobile;
-            padding-top: 100% * $room-img-height-mobile/$room-img-width-mobile;
+            padding-top: 100% * $room-img-aspect-ratio;
         }
         img.room-img{
             width: $room-img-width-mobile;
